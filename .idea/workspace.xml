@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7aee04c3-7855-4e39-9b25-fd26dc578353" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/footer/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/footer/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/form/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/form/regexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/form/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/header/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/header/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/header/useComponentVisible.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/optimizeMyImg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/Checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/Descriptionline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/description.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/filter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/imagesresolver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/medailon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/products/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rental/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/rental/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/textContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/textline/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/textline/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/theme.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-ssr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/appleIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/asuszenbook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/benqmx520.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/dell5580.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/dell7590.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/delle6500.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/delle6520.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/delle6540.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/delle7450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/epsonebw22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hp27fw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hp450g6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lenovos740.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2012_13_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2012_15_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2013_15_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2014_13_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2017_12_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2017_15_touch_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2020_13_touch_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2020_15_touch_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mac2020_16_touch_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/monitorIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/notebookIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/people.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/planet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/projectorIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/prorocketeers_rocket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/prorocketeers_rocket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rocketDark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rocketLight.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/css/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/et-line.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/et-line.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/et-line.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/et-line.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1m1JUjMLPzy2026yIxVPiIwQ9bD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7aee04c3-7855-4e39-9b25-fd26dc578353" name="Default Changelist" comment="" />
+      <created>1608655180912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608655180912</updated>
+      <workItem from="1608655181980" duration="4508000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="376" key="GridCell.Tab.0.bottom" timestamp="1608660829355">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="376" key="GridCell.Tab.0.bottom/0.0.1440.900/-232.-1080.1920.1080@0.0.1440.900" timestamp="1608660829355" />
+    <state width="1419" height="376" key="GridCell.Tab.0.center" timestamp="1608660829354">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="376" key="GridCell.Tab.0.center/0.0.1440.900/-232.-1080.1920.1080@0.0.1440.900" timestamp="1608660829354" />
+    <state width="1419" height="376" key="GridCell.Tab.0.left" timestamp="1608660829353">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="376" key="GridCell.Tab.0.left/0.0.1440.900/-232.-1080.1920.1080@0.0.1440.900" timestamp="1608660829353" />
+    <state width="1419" height="376" key="GridCell.Tab.0.right" timestamp="1608660829354">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="376" key="GridCell.Tab.0.right/0.0.1440.900/-232.-1080.1920.1080@0.0.1440.900" timestamp="1608660829354" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1608657243520">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-232.-1080.1920.1080@0.0.1440.900" timestamp="1608657243520" />
+  </component>
+</project>
