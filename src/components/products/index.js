@@ -6,39 +6,23 @@ import {FilterWrap} from "./styled";
 const axios = require("axios");
 
 const Products = () => {
-  const defaultProducts = require("../../products.json");
 
-  useEffect(()=>{
-      axios.get("http://localhost:5000/product").then((res)=>{
-          console.log(res.data);
-      })
-  })
+  const [products, setProducts] = useState([]);
 
-  const [products, setProducts] = useState(defaultProducts);
-
-  const onSubmitHandler = (values) => {
-    setProducts(
-      defaultProducts.filter((product) => values[product.type] === true)
-    );
-  };
+    useEffect(()=>{
+        axios.get("http://localhost:5000/product").then((res)=>{
+            setProducts(res.data);
+        })
+    })
 
   return (
     <div className="container mt-5">
-      <FilterWrap className="row">
-        <div className="d-block mb-8">
-          <Filter onSubmitHandler={onSubmitHandler} className="col-8" />
-        </div>
-      </FilterWrap>
-      <div className="row m-auto">
+      <div className="row m-auto justify-content-between">
         {products.map((product) => (
           <Medailon
-            type={product.type}
-            id={product.id}
-            name={product.name}
+            image={product.image}
             price={product.price}
-            inch={product.inch}
-            image={resolveImage(product.image)}
-            description={product.description}
+            name={product.name}
           />
         ))}
       </div>

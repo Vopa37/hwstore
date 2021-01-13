@@ -1,18 +1,16 @@
 import React from "react";
-import { Image as StyledImage, MedailonWrap, MedailonTitle } from "./styled";
-import { Link } from "@reach/router";
-import Image from "../optimizeMyImg";
+import { Image, ImageWrap, MedailonWrap, MedailonTitle } from "./styled";
 
-const Medailon = ({ id, name, image }) => {
+
+const Medailon = ({ name, image, price }) => {
   return (
-    <Link to={`/product/${id}`} className="col-12 col-lg-3 mb-2">
-      <MedailonWrap>
-        <StyledImage>
-          <Image alt={"Img " + id + "."} filename={image} />
-        </StyledImage>
+      <MedailonWrap className="col-12 col-lg-3 mb-2">
+        <ImageWrap>
+          <Image src={image}/>
+        </ImageWrap>
         <MedailonTitle>{name}</MedailonTitle>
+          <p>{`${price} Kč`}</p>
       </MedailonWrap>
-    </Link>
   );
 };
 
