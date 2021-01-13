@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Medailon from "./medailon";
 import Filter from "./filter";
 import { resolveImage } from "./imagesresolver";
 import {FilterWrap} from "./styled";
+const axios = require("axios");
+
 const Products = () => {
   const defaultProducts = require("../../products.json");
+
+  useEffect(()=>{
+      axios.get("http://localhost:5000/product").then((res)=>{
+          console.log(res.data);
+      })
+  })
 
   const [products, setProducts] = useState(defaultProducts);
 
