@@ -26,10 +26,6 @@ const Header = () => {
       <WidthWrapper>
         <a href="/">
           <StyledImg>
-            <Image
-              alt="Prorocketeers logo"
-              filename="prorocketeers_rocket.png"
-            />
           </StyledImg>
         </a>
 
@@ -53,7 +49,7 @@ const Header = () => {
           </DropdownButton>
        
           <Title>
-            ProRocketeers Rental - Půjčovna profesionálních strojů
+            Hardware Store
           </Title>
           {isComponentVisible && (
             <DropdownMenu>

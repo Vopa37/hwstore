@@ -3,6 +3,7 @@ const productRouter = require("./routes/product");
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const Product = require("./models/product.model");
 
 require("dotenv").config();
 

@@ -19,13 +19,18 @@ export const Title = styled.h4`
   color: ${Theme.palette.secondaryLight};
 `;
 
-export const Image = styled.div`
-  width: 8rem;
-  min-height: 8rem;
+export const ImageWrap = styled.div`
   margin: auto;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height: 60%;
+  width: 80%;
 `;
+
+export const Image = styled.img`
+    width:100%;
+    height:100%;
+`
 
 export const DescriptionText = styled.p`
   font-family: Raleway;
@@ -38,7 +43,8 @@ export const MedailonWrap = styled.div`
   background-color: rgba(44, 27, 70, 0.8);
   border-radius: 10px;
   margin-bottom: 20px;
-  height: 12rem;
+  margin: 0 2rem;
+  height: 20rem;
   &:hover {
     background-color: rgba(44, 27, 70, 1);
   }

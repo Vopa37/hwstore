@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Theme from "./theme";
 
 export const Root = styled.div`
+  display:flex;
+  flex-direction:column;
   text-align: center;
   background-image: linear-gradient(
     180deg,
