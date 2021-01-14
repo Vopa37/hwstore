@@ -1,20 +1,25 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Formik, Field } from "formik";
 import { Root, Form, Button, Input, Error} from "./styled";
-import { ProductSchema} from "./regexp";
+import { ProductSchema } from "./regexp";
 const axios = require("axios");
 
 const ItemForm = () => {
   const [submitted, setSubmitted] = useState(false);
-
+  const [success, setSuccess] = useState(false);
   const initialValues = () => ({
     "bot-field": "",
     "form-name": "Order",
     name: "",
-    price:null,
+    price: 0,
     description:"",
     image:""
   });
+
+  const showSuccessFormSubmit = (resetForm) => {
+    setSuccess(true);
+    setTimeout(()=>{setSuccess(false);resetForm()},2000);
+  }
 
   return (
     <Root>
@@ -28,8 +33,7 @@ const ItemForm = () => {
             price:values.price,
             image:values.image
           }).then(()=>{
-            resetForm();
-            console.log("Product added");
+            showSuccessFormSubmit(resetForm);
           })
         }}
         render={({ handleSubmit, errors, touched, isSubmitting }) => (
@@ -96,6 +100,8 @@ const ItemForm = () => {
             >
               {submitted ? "✓" : isSubmitting ? "Odesílání" : "Odeslat"}
             </Button>
+
+            {success ? <p>OK</p> : null}
           </Form>
         )}
       />

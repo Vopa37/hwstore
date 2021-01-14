@@ -12,7 +12,6 @@ export const ProductSchema = Yup.object().shape({
   price: Yup.number()
     .required("Povinné"),
   image: Yup.string()
-    .max(200, "Příliš dlouhé!")
     .required("Povinné"),
 });
 

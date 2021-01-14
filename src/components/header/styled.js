@@ -21,10 +21,6 @@ export const WidthWrapper = styled.div`
 export const Title = styled.h1`
   color: ${Theme.palette.secondaryLight};
   text-align: center;
-  font-size: 1rem;
-  @media screen and (min-width: 992px) {
-    font-size: 1.4rem;
-  }
   font-weight: bold;
 `;
 
