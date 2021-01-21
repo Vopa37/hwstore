@@ -22,7 +22,7 @@ export const Form = styled(FormikForm)`
 export const Input = styled(Field)`
   margin:auto;
   padding: 0;
-  width: 40%;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   padding-left: 20px;
@@ -56,8 +56,7 @@ export const Button = styled.button`
   margin:auto;
   height: 40px;
   background-color: ${(props) => (props.submitted ? "#32CD32" : "#1A1449")};
-  color: ${(props) =>
-    props.submitted ? Theme.palette.primary : Theme.palette.secondaryLight};
+  color:white;
   border: none;
   border-radius: 10px;
   font-weight: bold;

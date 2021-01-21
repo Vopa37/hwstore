@@ -3,7 +3,6 @@ import { Formik, Field } from "formik";
 import { Root, Form, Button, Input, Error} from "./styled";
 import { ProductSchema } from "./regexp";
 const axios = require("axios");
-
 const ItemForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -18,7 +17,7 @@ const ItemForm = () => {
 
   const showSuccessFormSubmit = (resetForm) => {
     setSuccess(true);
-    setTimeout(()=>{setSuccess(false);resetForm()},2000);
+    setTimeout(()=>{setSuccess(false);resetForm();window.location = "/";},2000);
   }
 
   return (
@@ -34,6 +33,7 @@ const ItemForm = () => {
             image:values.image
           }).then(()=>{
             showSuccessFormSubmit(resetForm);
+            localStorage.setItem("user","Vojta");
           })
         }}
         render={({ handleSubmit, errors, touched, isSubmitting }) => (

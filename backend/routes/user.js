@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user.model");
 
 router.route("/specific").get((req,res)=>{
-    User.findOne({username:req.query.username}).then(user => res.send(user))
+    User.findOne({username:req.query.username,password:req.query.password}).then(user => res.send(user))
         .catch(err => res.status(400).json("Error: " + err));
 })
 

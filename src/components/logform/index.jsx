@@ -1,53 +1,39 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Button, Input, Error} from "./styled";
+import { Root, Form, Button, Input, Error, Status} from "./styled";
 import { UserSchema } from "./regexp";
 const axios = require("axios");
+import { Redirect} from "@reach/router";
 
-const UserForm = () => {
+const LogForm = ({toggle}) => {
   const [submitted, setSubmitted] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const initialValues = () => ({
     "bot-field": "",
     "form-name": "Order",
-    firstname:"",
-    lastname:"",
-    username: "",
+    username:"",
     password:"",
-    admin:false,
   });
-
-  const showSuccessFormSubmit = (resetForm) => {
-    setSuccess(true);
-    setTimeout(()=>{setSuccess(false);resetForm()},2000);
-  }
 
   return (
     <Root>
+      <h1 className="text-white mb-6">Přihlásit se:</h1>
       <Formik
           validationSchema={UserSchema}
-        initialValues={initialValues(true)}
-        onSubmit={(values, { resetForm, setValues }) => {
-          const userExists = false;
-          axios.get("http://localhost:5000/user/specific", {params:{username:values.username}} ).then((res)=>{
+          initialValues={initialValues(true)}
+          onSubmit={(values, { resetForm }) => {
+            setSubmitted(true);
+          axios.get("http://localhost:5000/user/specific", {params:{username:values.username,password:values.password}} ).then((res)=>{
             if(res.data){
-              console.log("User already exists")
+              resetForm();
+              localStorage.setItem("user",res.data.username);
+              toggle(false);
             }else{
-              axios.post("http://localhost:5000/user",{
-                firstname:values.firstname,
-                lastname:values.lastname,
-                username:values.username,
-                password:values.password,
-                admin:false,
-              }).then(()=>{
-                resetForm();
-                console.log("User added");
-              })
+              setError(true);
+              setTimeout(()=>{toggle(false);resetForm()},2000);
             }
           });
-
-
         }}
         render={({ handleSubmit, errors, touched, isSubmitting }) => (
           <Form
@@ -59,30 +45,6 @@ const UserForm = () => {
             <Field type="hidden" name="form-name" />
             <Field type="hidden" name="bot-field" />
 
-            <div>
-              <Input
-                  type="text"
-                  id="firstname"
-                  name="firstname"
-                  placeholder="Jméno:"
-                  error={errors.firstname && touched.firstname}
-              />
-              <Error visibility={errors.firstname && touched.firstname}>
-                {errors.firstname ? errors.firstname : "No errors"}
-              </Error>
-            </div>
-            <div>
-              <Input
-                  type="text"
-                  id="lastname"
-                  name="lastname"
-                  placeholder="Příjmení:"
-                  error={errors.lastname && touched.lastname}
-              />
-              <Error visibility={errors.lastname && touched.lastname}>
-                {errors.lastname ? errors.lastname : "No errors"}
-              </Error>
-            </div>
             <div>
               <Input
                   type="text"
@@ -108,6 +70,10 @@ const UserForm = () => {
               </Error>
             </div>
 
+            {error &&
+            <Status visibility={true}>Uživatelské jméno nebo heslo není správné</Status>
+            }
+
             <Button
               type="submit"
             >
@@ -120,4 +86,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default LogForm;
