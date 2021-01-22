@@ -65,3 +65,10 @@ export const Button = styled.button`
     cursor: ${(props) => (props.submitted ? "" : "pointer")};
   }
 `;
+
+export const Status = styled.div`
+    color: ${({error}) => error ? "red" : "green"};
+    width: 100%;
+    margin: 1rem auto;
+`;
+

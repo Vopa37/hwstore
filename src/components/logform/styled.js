@@ -67,7 +67,7 @@ export const Button = styled.button`
 `;
 
 export const Status = styled.div`
-    color: red;
+    color: ${({error}) => error ? "red" : "green"};
     width: 100%;
     margin: 1rem auto;
 `;

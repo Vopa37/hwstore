@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Button, Input, Error} from "./styled";
+import { Root, Form, Button, Input, Error, Status} from "./styled";
 import { UserSchema } from "./regexp";
+import emailjs from "emailjs-com";
 const axios = require("axios");
-import { Redirect} from "@reach/router";
 
 const RegForm = ({toggle}) => {
   const [submitted, setSubmitted] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [message, setMessage] = useState(undefined);
 
   const initialValues = () => ({
     "bot-field": "",
@@ -15,7 +15,9 @@ const RegForm = ({toggle}) => {
     firstname:"",
     lastname:"",
     username: "",
+    email:"",
     password:"",
+    passwordcheck:"",
     admin:false,
   });
 
@@ -33,18 +35,35 @@ const RegForm = ({toggle}) => {
         onSubmit={(values, { resetForm, setValues }) => {
           axios.get("http://localhost:5000/user/specific", {params:{username:values.username}} ).then((res)=>{
             if(res.data){
-              console.log("User already exists");
-            }else{
+              setMessage({text:"Uživatel již existuje",error:true});
+              setTimeout(()=>{toggle(false);resetForm()},2000);
+            }else if(values.password === values.passwordcheck){
               axios.post("http://localhost:5000/user",{
                 firstname:values.firstname,
                 lastname:values.lastname,
                 username:values.username,
+                email:values.email,
                 password:values.password,
                 admin:false,
               }).then(()=>{
-                resetForm();
-                toggle(false);
+                const service_id = "service_6e0ddbk";
+                const template_id = "template_i54wise";
+                const user_id = "user_ab6qnlioxTRhjv9pgsAX8";
+
+                const data = {
+                    username: values.username,
+                    firstname: values.firstname,
+                    lastname: values.lastname,
+                    email:values.email,
+                };
+
+                emailjs.send(service_id, template_id, data, user_id);
+                setMessage({text:"Uživatel vytvořen",error:false});
+                setTimeout(()=>{toggle(false);resetForm()},2000);
               })
+            }else{
+              setMessage({text:"Hesla se neshodují",error:true});
+              setTimeout(()=>{toggle(false);resetForm()},2000);
             }
           });
         }}
@@ -96,6 +115,18 @@ const RegForm = ({toggle}) => {
             </div>
             <div>
               <Input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email:"
+                  error={errors.email && touched.email}
+              />
+              <Error visibility={errors.email && touched.email}>
+                {errors.email ? errors.email : "No errors"}
+              </Error>
+            </div>
+            <div>
+              <Input
                   type="password"
                   id="password"
                   name="password"
@@ -106,6 +137,22 @@ const RegForm = ({toggle}) => {
                 {errors.password ? errors.password : "No errors"}
               </Error>
             </div>
+            <div>
+              <Input
+                  type="password"
+                  id="passwordcheck"
+                  name="passwordcheck"
+                  placeholder="Heslo znovu:"
+                  error={errors.password && touched.password}
+              />
+              <Error visibility={errors.password && touched.password}>
+                {errors.password ? errors.password : "No errors"}
+              </Error>
+            </div>
+
+            {message &&
+            <Status error={message.error}>{message.text}</Status>
+            }
 
             <Button
               type="submit"

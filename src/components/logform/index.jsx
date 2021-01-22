@@ -7,7 +7,7 @@ import { Redirect} from "@reach/router";
 
 const LogForm = ({toggle}) => {
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [message, setMessage] = useState(undefined);
 
   const initialValues = () => ({
     "bot-field": "",
@@ -28,9 +28,10 @@ const LogForm = ({toggle}) => {
             if(res.data){
               resetForm();
               localStorage.setItem("user",res.data.username);
-              toggle(false);
+              setMessage({text:"Přihlášení proběhlo úspěšně",error:false});
+              setTimeout(()=>{toggle(false);resetForm()},2000);
             }else{
-              setError(true);
+              setMessage({text:"Uživatelské jméno nebo heslo není správné",error:true});
               setTimeout(()=>{toggle(false);resetForm()},2000);
             }
           });
@@ -70,8 +71,8 @@ const LogForm = ({toggle}) => {
               </Error>
             </div>
 
-            {error &&
-            <Status visibility={true}>Uživatelské jméno nebo heslo není správné</Status>
+            {message &&
+            <Status error={message.error}>{message.text}</Status>
             }
 
             <Button

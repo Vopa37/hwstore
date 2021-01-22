@@ -13,8 +13,12 @@ export const UserSchema = Yup.object().shape({
       .min(2, "Přílíš krátké!")
       .max(50, "Příliš dlouhé!")
       .required("Povinné"),
+  email: Yup.string()
+      .email("Neplatný email")
+      .max(50, "Příliš dlouhé!")
+      .required("Povinné"),
   password: Yup.string()
-      .min(2, "Přílíš krátké!")
+      .min(8, "Přílíš krátké!")
       .max(50, "Příliš dlouhé!")
       .required("Povinné"),
 });

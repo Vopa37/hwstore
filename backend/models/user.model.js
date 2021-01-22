@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+var validateEmail = function(email) {
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(email)
+};
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -21,6 +26,15 @@ const userSchema = new Schema({
         unique:true,
         minlength:3,
         maxlength:50,
+    },
+    email:{
+        type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
+        required: true,
+        validate: [validateEmail, 'Prosím zadejte platnou emailovou adresu'],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Prosím zadejte platnou emailovou adresu']
     },
     password:{
         type:String,
