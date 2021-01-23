@@ -4,11 +4,9 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export const Root = styled.div`
   width: 100%;
-  color: ${Theme.palette.basicInverse};
-  height: 80px;
   position: fixed;
   top: 0;
-  background-color: ${Theme.palette.primary};
+  background-color: ${Theme.palette.primaryGray};
   z-index: 2;
   padding: 10px;
 `;
@@ -19,7 +17,7 @@ export const WidthWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${Theme.palette.secondaryLight};
+  color: ${Theme.palette.text};
   text-align: center;
   font-weight: bold;
 `;
@@ -37,9 +35,8 @@ export const StyledImg = styled.div`
 `;
 
 export const DropdownButton = styled.button`
-  background-color: ${Theme.palette.primary};
+  background-color: ${Theme.palette.primaryGray};
   border: none;
-  float: right;
   height: 30px;
   width: 30px;
   @media screen and (min-width: 992px) {
@@ -53,7 +50,7 @@ export const DropdownButton = styled.button`
 
 export const DropdownMenu = styled.div`
   width: 160px;
-  background-color: ${Theme.palette.secondaryLight};
+  background-color: ${Theme.palette.primaryBlue};
   visibility: ${(props) => props.visibility};
   float: right;
   margin-top: 26px;
@@ -77,3 +74,22 @@ export const DropdownMenuLink = styled(AnchorLink)`
     border-radius: 30px;
   }
 `;
+
+
+export const Button = styled.button`
+  cursor:pointer;
+  max-width: 10rem;
+  min-width: 6rem;
+  margin: 0 2rem;
+  width: 50%;
+  height:2rem;
+  background-color:${Theme.palette.primaryBlue};
+  color:${Theme.palette.text};
+  border:0;
+  border-radius: 2rem;
+`;
+
+export const UserInfo = styled.p`
+  color:${Theme.palette.text}; 
+`;
+

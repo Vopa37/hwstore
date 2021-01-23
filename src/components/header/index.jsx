@@ -1,56 +1,69 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   Root,
   Title,
-  StyledImg,
   DropdownButton,
   DropdownMenu,
   DropdownMenuLink,
-  WidthWrapper,
+  WidthWrapper, Button,UserInfo
 } from "./styled";
+
+import Modal from "../modal/";
 
 import HamburgerMenu from "react-hamburger-menu";
 import useComponentVisible from "./useComponentVisible";
 import { Link } from "gatsby";
-import Image from "../optimizeMyImg";
-
+import RegForm from "../regform";
+import LogForm from "../logform";
+import {AnimatePresence} from "framer-motion";
 const Header = () => {
+    const [reg,setReg] = useState(false);
+    const [log,setLog] = useState(false);
+    const [user,setUser] = useState(undefined);
   const {
     ref,
     isComponentVisible,
     setIsComponentVisible,
   } = useComponentVisible(false);
 
+  useEffect(()=>{
+      setUser(localStorage.getItem("user"));
+  });
+
+    const logOff = () => {
+      localStorage.clear();
+      setUser(undefined);
+    }
+
   return (
     <Root>
       <WidthWrapper>
-        <a href="/">
-          <StyledImg>
-          </StyledImg>
-        </a>
-
-        <div ref={ref}>
-          <DropdownButton
-            onClick={() => setIsComponentVisible(!isComponentVisible)}
-          >
-            {
-              <HamburgerMenu
-                isOpen={isComponentVisible}
-                menuClicked={false}
-                width={30}
-                height={30}
-                strokeWidth={2}
-                rotate={0}
-                color="#EB5D3E"
-                borderRadius={0}
-                animationDuration={0.5}
-              />
-            }
-          </DropdownButton>
-       
+      <div>
           <Title>
-            Hardware Store
+              Hardware Store
           </Title>
+          <Button onClick={()=>{setLog(true)}}>Login</Button>
+          <Button onClick={()=>{setReg(true)}}>Registrace</Button>
+          {user && <div><UserInfo>Přihlášen jako uživatel: {user}</UserInfo></div>}
+        <div ref={ref}>
+            <DropdownButton
+                onClick={() => setIsComponentVisible(!isComponentVisible)}
+            >
+                {
+                    <HamburgerMenu
+                        isOpen={isComponentVisible}
+                        menuClicked={false}
+                        width={30}
+                        height={30}
+                        strokeWidth={2}
+                        rotate={0}
+                        color="#EB5D3E"
+                        borderRadius={0}
+                        animationDuration={0.5}
+                    />
+                }
+            </DropdownButton>
+
           {isComponentVisible && (
             <DropdownMenu>
               <DropdownMenuLink href="#Home">
@@ -64,7 +77,22 @@ const Header = () => {
               </DropdownMenuLink>
             </DropdownMenu>
           )}
+          <AnimatePresence>
+            {reg &&
+            <Modal toggle={setReg}>
+                <RegForm/>
+            </Modal>
+            }
+          </AnimatePresence>
+            <AnimatePresence>
+            {log &&
+            <Modal toggle={setLog}>
+                <LogForm/>
+            </Modal>
+            }
+            </AnimatePresence>
         </div>
+      </div>
       </WidthWrapper>
     </Root>
   );

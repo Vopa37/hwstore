@@ -1,12 +1,11 @@
 const theme = {};
 
 theme.palette = {
-  primary: "#1a1449",
-  secondary: "#eb5d3e",
-  secondaryLight: "#F9C833",
-
-  basic: "#000000",
-  basicInverse: "#ffffff",
+  primaryGray: "#12232E",
+  secondaryGray:"#203647",
+  primaryBlue:"#007CC7",
+  secondaryBlue: "#4DA8DA",
+  text:"#EEFBFB",
 
   transparent: "transparent",
 

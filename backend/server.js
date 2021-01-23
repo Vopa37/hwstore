@@ -20,11 +20,14 @@ mongoose.connect(uri,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopolog
 const connection = mongoose.connection;
 
 connection.once("open",()=>{
-    console.log("Connection established");
+    console.log("Connection to MongoDB established");
 })
 
 app.use("/product",productRouter);
 app.use("/user",userRouter);
+app.use((req,res)=>{
+    res.status(400).json({state:"OK"});
+})
 
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);

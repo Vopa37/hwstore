@@ -9,11 +9,11 @@ const Products = () => {
 
   const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         axios.get("http://localhost:5000/product").then((res)=>{
             setProducts(res.data);
         })
-    })
+    })*/
 
   return (
     <div className="container mt-5">
