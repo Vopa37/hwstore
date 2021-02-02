@@ -21,11 +21,6 @@ const RegForm = ({toggle}) => {
     admin:false,
   });
 
-  const showSuccessFormSubmit = (resetForm) => {
-    setSuccess(true);
-    setTimeout(()=>{setSuccess(false);resetForm()},2000);
-  }
-
   return (
     <Root>
       <h1 className="text-white mb-6">Zaregistrujte se:</h1>
@@ -36,7 +31,7 @@ const RegForm = ({toggle}) => {
           axios.get("http://localhost:5000/user/specific", {params:{username:values.username}} ).then((res)=>{
             if(res.data){
               setMessage({text:"Uživatel již existuje",error:true});
-              setTimeout(()=>{toggle(false);resetForm()},2000);
+              resetForm();
             }else if(values.password === values.passwordcheck){
               axios.post("http://localhost:5000/user",{
                 firstname:values.firstname,
@@ -45,7 +40,7 @@ const RegForm = ({toggle}) => {
                 email:values.email,
                 password:values.password,
                 admin:false,
-              }).then(()=>{
+              }).then((res)=>{
                 const service_id = "service_6e0ddbk";
                 const template_id = "template_i54wise";
                 const user_id = "user_ab6qnlioxTRhjv9pgsAX8";
@@ -58,12 +53,14 @@ const RegForm = ({toggle}) => {
                 };
 
                 emailjs.send(service_id, template_id, data, user_id);
+                localStorage.setItem("user",res.data.username);
+                res.data.admin ? localStorage.setItem("admin","true") : null ;
                 setMessage({text:"Uživatel vytvořen",error:false});
                 setTimeout(()=>{toggle(false);resetForm()},2000);
               })
             }else{
               setMessage({text:"Hesla se neshodují",error:true});
-              setTimeout(()=>{toggle(false);resetForm()},2000);
+              resetForm();
             }
           });
         }}

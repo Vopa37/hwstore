@@ -22,9 +22,16 @@ router.route("/").post((req,res)=>{
     const newUser = new User({firstname,lastname,username,email,password,admin});
 
     newUser.save().then(
-        ()=>{res.json("User added")}
+        ()=>{res.send({firstname:firstname,lastname:lastname,username:username,email:email,password:password,admin:admin})}
     ).catch(err => res.status(400).json("Error: " + err));
 })
+
+router.route("/remove").get((req,res)=>{
+    User.findOneAndDelete({_id:req.query.id}).then(()=>{
+        res.send({text:`Uživatel ${id} odstraněn`,error:false});
+    }).catch(() => res.status(400).send({text:"Nastala chyba - zkuste to znovu",error:true}));
+})
+
 
 module.exports = router;
 

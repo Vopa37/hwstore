@@ -18,4 +18,12 @@ router.route("/").post((req,res)=>{
     ).catch(err => res.status(400).json("Error: " + err));
 })
 
+router.route("/remove").get((req,res)=>{
+    Product.findOneAndDelete({_id:req.query.id}).then(()=>{
+        res.send({text:`Produkt ${id} odstraněn`,error:false});
+        console.log(res);
+    }).catch(() => res.status(400).send({text:"Nastala chyba - zkuste to znovu",error:true}));
+})
+
+
 module.exports = router;

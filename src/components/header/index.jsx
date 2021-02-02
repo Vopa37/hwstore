@@ -1,38 +1,31 @@
 import React, {useEffect, useState} from "react";
 import {
-  Root,
+    Root,
   Title,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuLink,
-  WidthWrapper, Button,UserInfo
+  WidthWrapper, Button,UserId
 } from "./styled";
 
 import Modal from "../modal/";
 
-import HamburgerMenu from "react-hamburger-menu";
-import useComponentVisible from "./useComponentVisible";
-import { Link } from "gatsby";
 import RegForm from "../regform";
 import LogForm from "../logform";
+import ManageUsers from "../manageusers";
+import ManageProducts from "../manageproducts";
 import {AnimatePresence} from "framer-motion";
 const Header = () => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(false);
     const [user,setUser] = useState(undefined);
-  const {
-    ref,
-    isComponentVisible,
-    setIsComponentVisible,
-  } = useComponentVisible(false);
-
+    const [logOffState,setLogOff] = useState(false);
+    const [usersInterface,setUsersInterface] = useState(false);
+    const [productsInterface,setProductsInterface] = useState(false);
   useEffect(()=>{
       setUser(localStorage.getItem("user"));
   });
 
     const logOff = () => {
-      localStorage.clear();
-      setUser(undefined);
+        setLogOff(true);
+        setTimeout(()=>{ localStorage.clear();setUser(undefined); setLogOff(false)},2000);
     }
 
   return (
@@ -42,41 +35,26 @@ const Header = () => {
           <Title>
               Hardware Store
           </Title>
-          <Button onClick={()=>{setLog(true)}}>Login</Button>
-          <Button onClick={()=>{setReg(true)}}>Registrace</Button>
-          {user && <div><UserInfo>Přihlášen jako uživatel: {user}</UserInfo></div>}
-        <div ref={ref}>
-            <DropdownButton
-                onClick={() => setIsComponentVisible(!isComponentVisible)}
-            >
-                {
-                    <HamburgerMenu
-                        isOpen={isComponentVisible}
-                        menuClicked={false}
-                        width={30}
-                        height={30}
-                        strokeWidth={2}
-                        rotate={0}
-                        color="#EB5D3E"
-                        borderRadius={0}
-                        animationDuration={0.5}
-                    />
-                }
-            </DropdownButton>
-
-          {isComponentVisible && (
-            <DropdownMenu>
-              <DropdownMenuLink href="#Home">
-                <Link to="/#Home">Co půjčujeme</Link>
-              </DropdownMenuLink>
-              <DropdownMenuLink href="#Produkty">
-                <Link to="/#Produkty">Produkty</Link>
-              </DropdownMenuLink>
-              <DropdownMenuLink href="#Formular">
-                <Link to="/#Formular">Kontaktujte nás</Link>
-              </DropdownMenuLink>
-            </DropdownMenu>
-          )}
+          {!user &&
+              <>
+                <Button onClick={()=>{setLog(true)}}>Login</Button>
+                <Button onClick={()=>{setReg(true)}}>Registrace</Button>
+              </>
+          }
+          {user &&
+              <UserId>
+                  <p>Uživatel: {user}</p>
+                  {localStorage.getItem("admin") &&
+                  <div>
+                      <p className="text-black">Vítejte v adminovském rozhraní</p>
+                      <Button onClick={setUsersInterface}>Správa uživatelů</Button>
+                      <Button onClick={setProductsInterface}>Správa produktů</Button>
+                  </div>}
+                  <Button onClick={logOff}>Odhlásit se</Button>
+                  {logOffState && <p className="text-black">Odhlašování...</p>}
+              </UserId>
+            }
+        <div>
           <AnimatePresence>
             {reg &&
             <Modal toggle={setReg}>
@@ -90,6 +68,20 @@ const Header = () => {
                 <LogForm/>
             </Modal>
             }
+            </AnimatePresence>
+            <AnimatePresence>
+                {usersInterface &&
+                <Modal toggle={setUsersInterface}>
+                    <ManageUsers toggle={setUsersInterface}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {productsInterface &&
+                <Modal toggle={setProductsInterface}>
+                    <ManageProducts toggle={setProductsInterface}/>
+                </Modal>
+                }
             </AnimatePresence>
         </div>
       </div>

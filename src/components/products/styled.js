@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Theme from "../theme";
 
-export const Button = styled.button`
+export const Button = styled.div`
   background-color: ${Theme.palette.primary};
   color: ${Theme.palette.secondaryLight};
   border-radius: 20px;
@@ -12,6 +12,8 @@ export const Button = styled.button`
     opacity: 0.7;
     cursor: pointer;
   }
+  margin: 2rem auto;
+  text-align: center;
 `;
 
 export const Title = styled.h4`
@@ -23,14 +25,18 @@ export const ImageWrap = styled.div`
   margin: auto;
   padding-top: 5%;
   padding-bottom: 5%;
-  height: 60%;
+  height: 50%;
+  max-height: 20rem;
   width: 80%;
+  max-width: 20rem;
 `;
 
 export const Image = styled.img`
     width:100%;
     height:100%;
-`
+    object-fit: cover;
+    border-radius: 1rem;
+`;
 
 export const DescriptionText = styled.p`
   font-family: Raleway;
@@ -40,13 +46,25 @@ export const DescriptionText = styled.p`
 `;
 
 export const MedailonWrap = styled.div`
-  background-color: rgba(44, 27, 70, 0.8);
+  background-color: ${Theme.palette.secondary};
+  color: white;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin: 0 2rem;
   height: 20rem;
+  transform: scale(1);
+  transition-duration: 0.6s;
+  @media(max-width: 575px){
+    margin: auto;
+  }
+  @media(min-width: 576px){
+    margin: 2rem 0;
+  }
+  @media(min-width: 992px){
+    margin: 2rem;
+  }
   &:hover {
-    background-color: rgba(44, 27, 70, 1);
+    transform: scale(1.1);
+    transition-duration: 0.6s;
+    cursor: pointer;
   }
 `;
 
