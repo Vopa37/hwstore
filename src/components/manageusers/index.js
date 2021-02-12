@@ -2,11 +2,14 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {Button} from "../header/styled";
 import {Status} from "../logform/styled";
+import Modal from "../modal";
+import EditUser from "./edituser";
+import {AnimatePresence} from "framer-motion";
 
 const ManageUsers = ({toggle}) => {
     const [users,setUsers] = useState(undefined);
     const [message,setMessage] = useState(undefined);
-
+    const [editUser,setEditUser] = useState(undefined);
 
     useEffect(()=>{
         axios.get('http://localhost:5000/user').then((res)=>{
@@ -35,8 +38,20 @@ const ManageUsers = ({toggle}) => {
                     </div>
 
                     <div className="w-50 d-flex flex-column justify-content-center">
-                        {!user.admin && <Button className="w-50 m-auto" onClick={()=>{deleteUser(user._id)}}>Odstranit uživatele</Button> }
+                        <Button className="w-50 m-auto" onClick={()=>{setEditUser(user)}}>Upravit</Button>
                     </div>
+
+                    <div className="w-50 d-flex flex-column justify-content-center">
+                        {!user.admin && <Button className="w-50 m-auto" onClick={()=>{deleteUser(user._id)}}>Odstranit</Button> }
+                    </div>
+
+                    <AnimatePresence>
+                        {editUser &&
+                        <Modal toggle={setEditUser}>
+                            <EditUser user={editUser} toggle={setEditUser}/>
+                        </Modal>
+                        }
+                    </AnimatePresence>
                 </div>
             ))}
         </div>

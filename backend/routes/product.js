@@ -28,5 +28,23 @@ router.route("/").delete((req,res)=>{
     }).catch(() => res.status(400).send({text:"Nastala chyba - zkuste to znovu",error:true}));
 })
 
+router.route("/").put((req,res)=>{
+    const _id = req.body._id;
+    const name = req.body.name;
+    const description = req.body.description;
+    const price = req.body.price;
+    const image = req.body.image;
+
+    Product.findById(_id).then((model)=>{
+        return Object.assign(model,{name:name,description:description,price:price,image:image});
+    }).then((model)=>{
+        return model.save();
+    }).then(()=>{
+        res.send("Produkt upraven");
+    }).catch((error)=>{
+        res.send(error);
+    })
+})
+
 
 module.exports = router;
