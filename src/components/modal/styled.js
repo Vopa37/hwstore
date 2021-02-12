@@ -33,7 +33,7 @@ export const ModalContainer = styled.div`
 
 export const ModalContent = styled(motion.div)`
   display: block;
-  background-color: ${Theme.palette.secondaryGray};
+  background-color: ${Theme.palette.purple};
   margin: auto;
   top: 50%;
   width: 100%;

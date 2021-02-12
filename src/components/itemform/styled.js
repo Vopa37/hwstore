@@ -14,7 +14,7 @@ export const Root = styled.div`
 `;
 
 export const Form = styled(FormikForm)`
-  width: 40%;
+  width: 80%;
   align-items: center;
   margin: auto;
 `;
@@ -52,17 +52,14 @@ export const Error = styled.p`
 `;
 
 export const Button = styled.button`
-  width: 40%;
-  margin:auto;
-  height: 40px;
-  background-color: ${(props) => (props.submitted ? "#32CD32" : "#1A1449")};
-  color: ${(props) =>
-    props.submitted ? Theme.palette.primary : Theme.palette.secondaryLight};
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  :hover {
-    opacity: ${(props) => (props.submitted ? "" : 0.7)};
-    cursor: ${(props) => (props.submitted ? "" : "pointer")};
-  }
+  cursor:pointer;
+  max-width: 10rem;
+  min-width: 6rem;
+  margin: 0 2rem 2rem 2rem;
+  width: 50%;
+  height:2rem;
+  background-color:${Theme.palette.secondary};
+  color:${Theme.palette.text};
+  border:0;
+  border-radius: 2rem;
 `;

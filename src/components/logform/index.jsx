@@ -28,11 +28,12 @@ const LogForm = ({toggle}) => {
             if(res.data){
               resetForm();
               localStorage.setItem("user",res.data.username);
+              res.data.admin ? localStorage.setItem("admin","true") : null ;
               setMessage({text:"Přihlášení proběhlo úspěšně",error:false});
               setTimeout(()=>{toggle(false);resetForm()},2000);
             }else{
               setMessage({text:"Uživatelské jméno nebo heslo není správné",error:true});
-              setTimeout(()=>{toggle(false);resetForm()},2000);
+              resetForm();
             }
           });
         }}

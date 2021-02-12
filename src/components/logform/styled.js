@@ -70,4 +70,5 @@ export const Status = styled.div`
     color: ${({error}) => error ? "red" : "green"};
     width: 100%;
     margin: 1rem auto;
+    font-size: 1.5rem;
 `;

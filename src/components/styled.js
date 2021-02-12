@@ -11,11 +11,23 @@ export const Root = styled.div`
     #eb5d3e 76.89%,
     #fec82f 99.05%
   );
-  color: ${Theme.palette.secondaryLight};
+  color: ${Theme.palette.secondary};
   font-family: ${Theme.fonts.primary};
   font-size: ${Theme.fontBaseSize};
   min-height: 100vh;
   padding-top: 80px;
+  overflow-x: hidden;
+`;
+
+export const PageRoot = styled.div`
+  display:flex;
+  flex-direction:column;
+  text-align: center;
+  background-color: ${Theme.palette.primary}; 
+  color: ${Theme.palette.secondary};
+  font-family: ${Theme.fonts.primary};
+  font-size: ${Theme.fontBaseSize};
+  min-height: 100vh;
   overflow-x: hidden;
 `;
 
