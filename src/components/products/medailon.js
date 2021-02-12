@@ -9,17 +9,17 @@ const Medailon = ({ name, image, price, description, id }) => {
     const [isOpen,setOpen] = useState(false);
   return (
       <>
-      <MedailonWrap className="col-7 col-sm-5 col-lg-3 mb-2" onClick={()=>{setOpen(true)}}>
+      <MedailonWrap className="col-12 col-md-5 " onClick={()=>{setOpen(true)}}>
         <ImageWrap>
           <Image src={image}/>
         </ImageWrap>
         <MedailonTitle>{name}</MedailonTitle>
-          <p>{`${price} Kč`}</p>
+          <MedailonTitle>{`Cena : ${price} Kč`}</MedailonTitle>
       </MedailonWrap>
           <AnimatePresence>
               {isOpen &&
               <Modal toggle={setOpen}>
-                  <ProductInfo name={name} price={price} description={description} id={id}/>
+                  <ProductInfo name={name} price={price} description={description} id={id} image={image}/>
               </Modal>
               }
           </AnimatePresence>

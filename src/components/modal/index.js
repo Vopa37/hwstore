@@ -60,39 +60,42 @@ const Modal = ({ toggle, children}) => {
                             setAnimationComplete(true);
                         }}
                     >
+
                         <div className="w-100 d-flex justify-content-end">
-                            <Close
-                                onClick={() => {
-                                    toggle(false);
-                                    clearAllBodyScrollLocks();
-                                }}
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20.39 20.39"
-                            >
-                                <title>close</title>
-                                <line
-                                    x1="16.39"
-                                    y1="16.39"
-                                    x2="4"
-                                    y2="4"
-                                    fill="none"
-                                    stroke="#000000"
-                                    strokeLinecap="round"
-                                    strokeMiterlimit="10"
-                                    strokeWidth="1"
-                                />
-                                <line
-                                    x1="4"
-                                    y1="16.39"
-                                    x2="16.39"
-                                    y2="4"
-                                    fill="none"
-                                    stroke="#000000"
-                                    strokeLinecap="round"
-                                    strokeMiterlimit="10"
-                                    strokeWidth="1"
-                                />
-                            </Close>
+                            {toggle && (
+                                <Close
+                                    onClick={() => {
+                                        toggle(false);
+                                        clearAllBodyScrollLocks();
+                                    }}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20.39 20.39"
+                                >
+                                    <title>close</title>
+                                    <line
+                                        x1="16.39"
+                                        y1="16.39"
+                                        x2="4"
+                                        y2="4"
+                                        fill="none"
+                                        stroke="#000000"
+                                        strokeLinecap="round"
+                                        strokeMiterlimit="10"
+                                        strokeWidth="1"
+                                    />
+                                    <line
+                                        x1="4"
+                                        y1="16.39"
+                                        x2="16.39"
+                                        y2="4"
+                                        fill="none"
+                                        stroke="#000000"
+                                        strokeLinecap="round"
+                                        strokeMiterlimit="10"
+                                        strokeWidth="1"
+                                    />
+                                </Close>
+                            )}
                         </div>
                         {React.cloneElement(children, { toggle }, null)}
                     </ModalContent>

@@ -5,13 +5,17 @@ import {
   WidthWrapper, Button,UserId
 } from "./styled";
 
+import cart from "../../images/cart.svg";
+
 import Modal from "../modal/";
 
 import RegForm from "../regform";
 import LogForm from "../logform";
 import ManageUsers from "../manageusers";
 import ManageProducts from "../manageproducts";
+import ShoppingCart from "../shoppingcart";
 import {AnimatePresence} from "framer-motion";
+
 const Header = () => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(false);
@@ -19,6 +23,7 @@ const Header = () => {
     const [logOffState,setLogOff] = useState(false);
     const [usersInterface,setUsersInterface] = useState(false);
     const [productsInterface,setProductsInterface] = useState(false);
+    const [cartOpen,setOpenCart] = useState(false);
   useEffect(()=>{
       setUser(localStorage.getItem("user"));
   });
@@ -29,6 +34,7 @@ const Header = () => {
     }
 
   return (
+
     <Root>
       <WidthWrapper>
       <div>
@@ -51,6 +57,7 @@ const Header = () => {
                       <Button onClick={setProductsInterface}>Správa produktů</Button>
                   </div>}
                   <Button onClick={logOff}>Odhlásit se</Button>
+                  <div className="w-40px h-40px mx-auto cursor-pointer pb-8 hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
                   {logOffState && <p className="text-black">Odhlašování...</p>}
               </UserId>
             }
@@ -80,6 +87,13 @@ const Header = () => {
                 {productsInterface &&
                 <Modal toggle={setProductsInterface}>
                     <ManageProducts toggle={setProductsInterface}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {cartOpen &&
+                <Modal toggle={setOpenCart}>
+                    <ShoppingCart toggle={setOpenCart}/>
                 </Modal>
                 }
             </AnimatePresence>
