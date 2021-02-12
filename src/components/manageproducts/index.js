@@ -5,12 +5,16 @@ import Modal from "../modal";
 import {AnimatePresence} from "framer-motion";
 import ItemForm from "../itemform";
 import {ProductsContext} from "../../pages";
+import EditProduct from "./editproduct";
+import Confirm from "../confirm";
 
 const ManageProducts = () => {
     const products = useContext(ProductsContext).products;
     const setProducts = useContext(ProductsContext).setProducts;
     const [message,setMessage] = useState(undefined);
     const [productForm,setProductForm] = useState(false);
+    const [editProduct,setEditProduct] = useState(undefined);
+    const [deleteConfirm,setDeleteConfirm] = useState(false);
 
 
     const deleteProduct = (id) => {
@@ -50,8 +54,25 @@ const ManageProducts = () => {
                     </div>
 
                     <div className="w-50 d-flex flex-column justify-content-center">
-                        <Button className="w-50 m-auto" onClick={()=>{deleteProduct(product._id)}}>Odstranit produkt</Button>
+                        <Button className="w-50 m-auto" onClick={()=>{setDeleteConfirm(true)}}>Odstranit</Button>
                     </div>
+                    <div className="w-50 d-flex flex-column justify-content-center">
+                        <Button className="w-50 m-auto" onClick={()=>{setEditProduct(product)}}>Upravit</Button>
+                    </div>
+                    <AnimatePresence>
+                        {editProduct &&
+                        <Modal toggle={setEditProduct}>
+                            <EditProduct product={editProduct} toggle={setEditProduct}/>
+                        </Modal>
+                        }
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {deleteConfirm &&
+                        <Modal>
+                            <Confirm title="Opravdu chcete tento produkt smazat?" accept={()=>{deleteProduct(product._id);setDeleteConfirm(false)}} decline={()=>{setDeleteConfirm(false)}}/>
+                        </Modal>
+                        }
+                    </AnimatePresence>
                 </div>
             ))}
 

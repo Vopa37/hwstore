@@ -33,7 +33,6 @@ const ItemForm = () => {
             image:values.image
           }).then(()=>{
             showSuccessFormSubmit(resetForm);
-            localStorage.setItem("user","Vojta");
           })
         }}
         render={({ handleSubmit, errors, touched, isSubmitting }) => (

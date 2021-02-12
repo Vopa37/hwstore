@@ -32,6 +32,26 @@ router.route("/remove").get((req,res)=>{
     }).catch(() => res.status(400).send({text:"Nastala chyba - zkuste to znovu",error:true}));
 })
 
+router.route("/").put((req,res)=>{
+    const _id = req.body._id;
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    const password = req.body.password;
+    const username = req.body.username;
+    const admin = req.body.admin;
+    const email = req.body.email;
+
+    User.findById(_id).then((model)=>{
+        return Object.assign(model,{firstname:firstname,lastname:lastname,username:username,email:email,password:password,admin:admin});
+    }).then((model)=>{
+        return model.save();
+    }).then(()=>{
+        res.send("Uživatel upraven");
+    }).catch((error)=>{
+        res.send(error);
+    })
+})
+
 
 module.exports = router;
 

@@ -63,3 +63,13 @@ export const Button = styled.button`
   border:0;
   border-radius: 2rem;
 `;
+
+export const Checkbox = styled(Field)`
+  margin-bottom:2rem;
+  padding:0;
+  border: ${(props) => (props.error ? "2px solid red" : "none")};
+  :focus {
+    border: 1px solid grey;
+  }
+  outline: none;
+`;
