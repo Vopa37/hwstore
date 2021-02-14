@@ -45,8 +45,8 @@ router.route("/").put((req,res)=>{
         return Object.assign(model,{firstname:firstname,lastname:lastname,username:username,email:email,password:password,admin:admin});
     }).then((model)=>{
         return model.save();
-    }).then(()=>{
-        res.send("Uživatel upraven");
+    }).then((user)=>{
+        res.send(user);
     }).catch((error)=>{
         res.send(error);
     })

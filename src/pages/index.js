@@ -10,10 +10,12 @@ import axios from "axios";
 
 export const ProductsContext = React.createContext();
 export const CartContext = React.createContext();
+export const UserContext = React.createContext();
 
 const IndexPage = () => {
     const [cart,setCart] = useState([]);
     const [products, setProducts] = useState(undefined);
+    const [users, setUsers] = useState(undefined);
 
     useEffect(()=>{
         axios.get("http://localhost:5000/product").then((res)=>{
@@ -24,6 +26,7 @@ const IndexPage = () => {
     return(
         <ProductsContext.Provider value={{products:products,setProducts:setProducts}}>
             <CartContext.Provider value={{cart:cart,setCart:setCart}}>
+                <UserContext.Provider value={{users:users,setUsers:setUsers}}>
                 <PageRoot>
                     <MenuTarget id="Home"/>
                         <Header/>
@@ -31,6 +34,7 @@ const IndexPage = () => {
                         <Products/>
                     <Footer/>
                 </PageRoot>
+                </UserContext.Provider>
             </CartContext.Provider>
         </ProductsContext.Provider>
     );

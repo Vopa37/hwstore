@@ -33,19 +33,6 @@ export const StyledImg = styled.div`
   margin: 12px;
 `;
 
-export const Button = styled.button`
-  cursor:pointer;
-  max-width: 10rem;
-  min-width: 6rem;
-  margin: 0 2rem 2rem 2rem;
-  width: 50%;
-  height:2rem;
-  background-color:${Theme.palette.secondary};
-  color:${Theme.palette.text};
-  border:0;
-  border-radius: 2rem;
-`;
-
 export const UserId = styled.div`
     max-width: 20rem;
     width: 50%;

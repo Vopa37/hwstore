@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import axios from "axios";
-import {Button} from "./styled";
+import {Button} from "../styled";
 import Modal from "../modal";
 import {AnimatePresence} from "framer-motion";
 import ItemForm from "../itemform";
@@ -33,7 +33,7 @@ const ManageProducts = () => {
     return(
         <div className="w-80 m-auto">
             <h1 className="text-center text-white">Správa produktů</h1>
-                <Button onClick={()=>{setProductForm(true)}}>Přidat produkt</Button>
+            <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{setProductForm(true)}}>Přidat produkt</Button>
             {message && <p>{message.text}</p>}
                 <AnimatePresence>
                     {productForm &&
@@ -42,7 +42,7 @@ const ManageProducts = () => {
                     </Modal>
                     }
                 </AnimatePresence>
-            { products && products.map((product,index)=>(
+            {products && products.map((product,index)=>(
                 <div className="text-black w-100 bg-white my-4 d-flex" key={index}>
                     <div className="w-50">
                         <p className="text-center m-0 p-0"> <span className="fw-700">ID:</span> {product._id}</p>
@@ -52,13 +52,14 @@ const ManageProducts = () => {
                         <img src={product.image} alt={product.image} className="rounded w-100 h-100"/>
                         </div>
                     </div>
+                    <div className="w-50 d-flex flex-column justify-content-center">
+                        <Button className="w-50 m-auto" onClick={()=>{setEditProduct(product)}}>Upravit</Button>
+                    </div>
 
                     <div className="w-50 d-flex flex-column justify-content-center">
                         <Button className="w-50 m-auto" onClick={()=>{setDeleteConfirm(true)}}>Odstranit</Button>
                     </div>
-                    <div className="w-50 d-flex flex-column justify-content-center">
-                        <Button className="w-50 m-auto" onClick={()=>{setEditProduct(product)}}>Upravit</Button>
-                    </div>
+
                     <AnimatePresence>
                         {editProduct &&
                         <Modal toggle={setEditProduct}>

@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import {
     Root,
   Title,
-  WidthWrapper, Button,UserId
+  WidthWrapper,UserId
 } from "./styled";
+
+import {Button} from "../styled";
 
 import cart from "../../images/cart.svg";
 
@@ -15,6 +17,7 @@ import ManageUsers from "../manageusers";
 import ManageProducts from "../manageproducts";
 import ShoppingCart from "../shoppingcart";
 import {AnimatePresence} from "framer-motion";
+import EditUser from "../manageusers/edituser";
 
 const Header = () => {
     const [reg,setReg] = useState(false);
@@ -24,6 +27,7 @@ const Header = () => {
     const [usersInterface,setUsersInterface] = useState(false);
     const [productsInterface,setProductsInterface] = useState(false);
     const [cartOpen,setOpenCart] = useState(false);
+    const [editUser,setEditUser] = useState(undefined);
   useEffect(()=>{
       setUser(localStorage.getItem("user"));
   });
@@ -47,17 +51,20 @@ const Header = () => {
                 <Button onClick={()=>{setReg(true)}}>Registrace</Button>
               </>
           }
+          <div className="w-40px h-40px mx-auto cursor-pointer pb-8 hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
           {user &&
               <UserId>
-                  <p>Uživatel: {user}</p>
-                  {localStorage.getItem("admin") &&
+                  <p>Uživatel: {JSON.parse(user).username}</p>
+                  {localStorage.getItem("admin") === "true" &&
                   <div>
                       <p className="text-black">Vítejte v adminovském rozhraní</p>
                       <Button onClick={setUsersInterface}>Správa uživatelů</Button>
                       <Button onClick={setProductsInterface}>Správa produktů</Button>
                   </div>}
+                  {!JSON.parse(user).admin && (
+                      <Button onClick={()=>{setEditUser(JSON.parse(user))}}>Upravit informace</Button>
+                  )}
                   <Button onClick={logOff}>Odhlásit se</Button>
-                  <div className="w-40px h-40px mx-auto cursor-pointer pb-8 hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
                   {logOffState && <p className="text-black">Odhlašování...</p>}
               </UserId>
             }
@@ -94,6 +101,13 @@ const Header = () => {
                 {cartOpen &&
                 <Modal toggle={setOpenCart}>
                     <ShoppingCart toggle={setOpenCart}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {editUser &&
+                <Modal toggle={setEditUser}>
+                    <EditUser admin={false} user={editUser} toggle={setEditUser}/>
                 </Modal>
                 }
             </AnimatePresence>

@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
-import {Button} from "../header/styled";
+import {Button} from "../styled";
 import {Status} from "../logform/styled";
 import Modal from "../modal";
 import EditUser from "./edituser";
 import {AnimatePresence} from "framer-motion";
+import {UserContext} from "../../pages";
 
 const ManageUsers = ({toggle}) => {
-    const [users,setUsers] = useState(undefined);
+    const users = useContext(UserContext).users;
+    const setUsers = useContext(UserContext).setUsers;
     const [message,setMessage] = useState(undefined);
     const [editUser,setEditUser] = useState(undefined);
 
@@ -48,7 +50,7 @@ const ManageUsers = ({toggle}) => {
                     <AnimatePresence>
                         {editUser &&
                         <Modal toggle={setEditUser}>
-                            <EditUser user={editUser} toggle={setEditUser}/>
+                            <EditUser admin={true} user={editUser} toggle={setEditUser}/>
                         </Modal>
                         }
                     </AnimatePresence>

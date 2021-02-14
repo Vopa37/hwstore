@@ -1,6 +1,9 @@
 import React, {useState,useContext} from "react";
-import {Button} from "./styled";
+import {Button} from "../styled";
 import {CartContext} from "../../pages";
+import OrderSummary from "./ordersummary";
+import Modal from "../modal";
+import {AnimatePresence} from "framer-motion";
 
 export const prepareItems = (array) => {
     var returnedArray = [];
@@ -22,11 +25,12 @@ export const prepareItems = (array) => {
     return returnedArray;
 }
 
-const ShoppingCart = ({toggle}) => {
-    const cart = useContext(CartContext).cart;
+const ShoppingCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
     const setCart = useContext(CartContext).setCart;
 
     const [message,setMessage] = useState(undefined);
+    const [orderSum,setOrderSum] = useState(false);
 
     return(
         <div className="w-80 m-auto">
@@ -48,7 +52,15 @@ const ShoppingCart = ({toggle}) => {
                     </div>
                 </div>
             ))}
-            <Button>Odeslat objednávku</Button>
+            <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{setOrderSum(true)}}>K objednávce</Button>
+
+            <AnimatePresence>
+                {orderSum &&
+                    <Modal toggle={setOrderSum}>
+                        <OrderSummary data={prepareItems(cart)}/>
+                    </Modal>
+                }
+            </AnimatePresence>
         </div>
     );
 }

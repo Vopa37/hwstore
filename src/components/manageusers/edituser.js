@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import axios from "axios";
-import {Button, Error, Form, Input, Root, Checkbox} from "../itemform/styled";
+import {Error, Form, Input, Root, Checkbox} from "../itemform/styled";
 import {Field, Formik} from "formik";
 import {UserSchema} from "../regform/regexp";
-import {Status} from "../regform/styled";
+import {Button} from "../styled";
+import {UserContext} from "../../pages";
 
-const EditProduct = ({user,toggle}) => {
-
+const EditProduct = ({admin,user,toggle}) => {
+    const setUsers = useContext(UserContext).setUsers;
     const [submitted, setSubmitted] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -40,7 +41,11 @@ const EditProduct = ({user,toggle}) => {
                         email:values.email,
                         password:values.password,
                         admin:values.admin,
-                    }).then(()=>{
+                    }).then((res)=>{
+                        localStorage.setItem("user",JSON.stringify(res.data));
+                        axios.get("http://localhost:5000/user").then((res)=>{
+                            setUsers(res.data);
+                        })
                         showSuccessFormSubmit(resetForm);
                     })
                 }}
@@ -114,15 +119,16 @@ const EditProduct = ({user,toggle}) => {
                                 {errors.password ? errors.password : "No errors"}
                             </Error>
                         </div>
-
-                        <div>
-                            <p className="text-white">Admin:</p>
-                            <Checkbox
-                                type="checkbox"
-                                id="admin"
-                                name="admin"
-                            />
-                        </div>
+                        {admin && (
+                            <div>
+                                <p className="text-white">Admin:</p>
+                                <Checkbox
+                                    type="checkbox"
+                                    id="admin"
+                                    name="admin"
+                                />
+                            </div>
+                        )}
 
                         <Button
                             type="submit"

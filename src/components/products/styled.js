@@ -1,21 +1,6 @@
 import styled from "styled-components";
 import Theme from "../theme";
 
-export const Button = styled.div`
-  background-color: ${Theme.palette.primary};
-  color: ${Theme.palette.secondaryLight};
-  border-radius: 20px;
-  width: 40%;
-  height: 30px;
-  border: 1px solid black;
-  &:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
-  margin: 2rem auto;
-  text-align: center;
-`;
-
 export const Title = styled.h4`
   font-weight: 500;
   color: ${Theme.palette.secondaryLight};

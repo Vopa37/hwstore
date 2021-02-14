@@ -51,21 +51,6 @@ export const Error = styled.p`
   padding-left: 3px;
 `;
 
-export const Button = styled.button`
-  width: 40%;
-  margin:auto;
-  height: 40px;
-  background-color: ${(props) => (props.submitted ? "#32CD32" : "#1A1449")};
-  color:white;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  :hover {
-    opacity: ${(props) => (props.submitted ? "" : 0.7)};
-    cursor: ${(props) => (props.submitted ? "" : "pointer")};
-  }
-`;
-
 export const Status = styled.div`
     color: ${({error}) => error ? "red" : "green"};
     width: 100%;
