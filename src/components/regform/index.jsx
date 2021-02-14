@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Button, Input, Error, Status} from "./styled";
+import { Root, Form, Input, Error, Status} from "./styled";
+import {Button} from "../styled";
 import { UserSchema } from "./regexp";
 import emailjs from "emailjs-com";
 const axios = require("axios");

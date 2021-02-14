@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Button, Input, Error} from "./styled";
+import { Root, Form, Input, Error} from "./styled";
+import {Button} from "../styled";
 import { ProductSchema } from "./regexp";
 const axios = require("axios");
 const ItemForm = () => {

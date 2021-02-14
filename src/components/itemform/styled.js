@@ -51,19 +51,6 @@ export const Error = styled.p`
   padding-left: 3px;
 `;
 
-export const Button = styled.button`
-  cursor:pointer;
-  max-width: 10rem;
-  min-width: 6rem;
-  margin: 0 2rem 2rem 2rem;
-  width: 50%;
-  height:2rem;
-  background-color:${Theme.palette.secondary};
-  color:${Theme.palette.text};
-  border:0;
-  border-radius: 2rem;
-`;
-
 export const Checkbox = styled(Field)`
   margin-bottom:2rem;
   padding:0;

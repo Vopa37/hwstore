@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import axios from "axios";
-import {Button, Error, Form, Input, Root} from "../itemform/styled";
+import {Error, Form, Input, Root} from "../itemform/styled";
+import {Button} from "../styled";
 import {Field, Formik} from "formik";
 import {ProductSchema} from "../itemform/regexp";
 
 const EditProduct = ({product,toggle}) => {
-
     const [submitted, setSubmitted] = useState(false);
     const [success, setSuccess] = useState(false);
     const initialValues = () => ({

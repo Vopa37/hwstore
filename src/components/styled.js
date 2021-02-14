@@ -44,3 +44,16 @@ export const MenuTarget = styled.a`
   top: -250px;
   visibility: hidden;
 `;
+
+export const Button = styled.button`
+  cursor:pointer;
+  max-width: 10rem;
+  min-width: 6rem;
+  margin: 0 2rem 2rem 2rem;
+  width: 50%;
+  height:2rem;
+  background-color:${Theme.palette.secondary};
+  color:${Theme.palette.text};
+  border:0;
+  border-radius: 2rem;
+`;
