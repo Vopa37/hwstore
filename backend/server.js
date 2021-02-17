@@ -1,9 +1,9 @@
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
+const orderRouter = require("./routes/order");
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const Product = require("./models/product.model");
 
 require("dotenv").config();
 
@@ -25,6 +25,8 @@ connection.once("open",()=>{
 
 app.use("/product",productRouter);
 app.use("/user",userRouter);
+app.use("/order",orderRouter);
+
 app.use((req,res)=>{
     res.status(400).json({state:"OK"});
 })

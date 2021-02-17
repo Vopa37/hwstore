@@ -9,18 +9,23 @@ export const prepareItems = (array) => {
     var returnedArray = [];
     var counter = {};
 
-    array.forEach(function(obj) {
-        var key = JSON.stringify(obj)
-        counter[key] = (counter[key] || 0) + 1
-    })
+    if(array != null){
+        array.forEach(function(obj) {
+            var key = JSON.stringify(obj)
+            counter[key] = (counter[key] || 0) + 1
+        })
 
-    Object.entries(counter).forEach((item)=>{
-        var obj = {
-            data:JSON.parse(item[0]),
-            count:item[1],
-        }
-        returnedArray.push(obj);
-    })
+        Object.entries(counter).forEach((item)=>{
+            var obj = {
+                data:JSON.parse(item[0]),
+                count:item[1],
+            }
+            returnedArray.push(obj);
+        })
+    }
+    else{
+        return null;
+    }
 
     return returnedArray;
 }
