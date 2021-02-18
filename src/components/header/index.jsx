@@ -18,6 +18,9 @@ import ManageProducts from "../manageproducts";
 import ShoppingCart from "../shoppingcart";
 import {AnimatePresence} from "framer-motion";
 import EditUser from "../manageusers/edituser";
+import axios from "axios";
+import OrdersList from "../orders/ordersList";
+import AdminList from "../orders/adminList";
 
 const Header = () => {
     const [reg,setReg] = useState(false);
@@ -26,15 +29,23 @@ const Header = () => {
     const [logOffState,setLogOff] = useState(false);
     const [usersInterface,setUsersInterface] = useState(false);
     const [productsInterface,setProductsInterface] = useState(false);
+    const [ordersInterface,setOrdersInterface] = useState(false);
     const [cartOpen,setOpenCart] = useState(false);
     const [editUser,setEditUser] = useState(undefined);
-  useEffect(()=>{
-      setUser(localStorage.getItem("user"));
-  });
+    const [orders,setOrders] = useState(undefined);
+      useEffect(()=>{
+          setUser(localStorage.getItem("user"));
+      });
 
     const logOff = () => {
         setLogOff(true);
         setTimeout(()=>{ localStorage.clear();setUser(undefined); setLogOff(false)},2000);
+    }
+
+    const getOrders = (userId) => {
+        axios.get("http://localhost:5000/order",{params:{userId:userId}}).then((res)=>{
+            setOrders(res.data);
+        })
     }
 
   return (
@@ -60,10 +71,12 @@ const Header = () => {
                       <p className="text-black">Vítejte v adminovském rozhraní</p>
                       <Button onClick={setUsersInterface}>Správa uživatelů</Button>
                       <Button onClick={setProductsInterface}>Správa produktů</Button>
+                      <Button onClick={()=>{setOrdersInterface(true)}}>Správa objednávek</Button>
                   </div>}
                   {!JSON.parse(user).admin && (
                       <Button onClick={()=>{setEditUser(JSON.parse(user))}}>Upravit informace</Button>
                   )}
+                  <Button onClick={()=>{getOrders(JSON.parse(user)._id)}}>Mé objednávky</Button>
                   <Button onClick={logOff}>Odhlásit se</Button>
                   {logOffState && <p className="text-black">Odhlašování...</p>}
               </UserId>
@@ -108,6 +121,20 @@ const Header = () => {
                 {editUser &&
                 <Modal toggle={setEditUser}>
                     <EditUser admin={false} user={editUser} toggle={setEditUser}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {orders &&
+                <Modal toggle={setOrders}>
+                    <OrdersList data={orders}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {ordersInterface &&
+                <Modal toggle={setOrdersInterface}>
+                    <AdminList/>
                 </Modal>
                 }
             </AnimatePresence>

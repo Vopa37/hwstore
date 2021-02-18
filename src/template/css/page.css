@@ -27232,3 +27232,17 @@ a.text-lightest:focus {
 }
 
 /*# sourceMappingURL=page.css.map */
+
+
+/*own styles*/
+
+.text-underline{
+  text-decoration: underline;
+}
+
+.item-bordered{
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+}
