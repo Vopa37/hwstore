@@ -57,7 +57,11 @@ const ShoppingCart = () => {
                     </div>
                 </div>
             ))}
+            {cart ?
             <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{setOrderSum(true)}}>K objednávce</Button>
+                :
+                <h5 className="text-white text-center">Košík je prázdný. Musíte ho naplnit</h5>
+            }
 
             <AnimatePresence>
                 {orderSum &&

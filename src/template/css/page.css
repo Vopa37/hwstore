@@ -27246,3 +27246,7 @@ a.text-lightest:focus {
   border-style: solid;
   border-radius: 10px;
 }
+
+.bg-orange{
+  background-color: #F64C72;
+}

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Formik, Field } from "formik";
 import { Root, Form, Input, Error, Status} from "./styled";
 import { UserSchema } from "./regexp";
 import {Button} from "../styled";
+import {UserContext} from "../../pages";
 
 const axios = require("axios");
-import { Redirect} from "@reach/router";
 
 const LogForm = ({toggle}) => {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState(undefined);
-
+  const setUser = useContext(UserContext).setUser;
   const initialValues = () => ({
     "bot-field": "",
     "form-name": "Order",
@@ -30,6 +30,7 @@ const LogForm = ({toggle}) => {
             if(res.data){
               resetForm();
               localStorage.setItem("user",JSON.stringify(res.data));
+              setUser(res.data);
               localStorage.setItem("admin",res.data.admin);
               setMessage({text:"Přihlášení proběhlo úspěšně",error:false});
               setTimeout(()=>{toggle(false);resetForm()},2000);

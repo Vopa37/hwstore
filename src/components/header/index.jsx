@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {
     Root,
   Title,
@@ -21,11 +21,13 @@ import EditUser from "../manageusers/edituser";
 import axios from "axios";
 import OrdersList from "../orders/ordersList";
 import AdminList from "../orders/adminList";
+import {UserContext} from "../../pages";
 
 const Header = () => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(false);
-    const [user,setUser] = useState(undefined);
+    const user = useContext(UserContext).user;
+    const setUser = useContext(UserContext).setUser;
     const [logOffState,setLogOff] = useState(false);
     const [usersInterface,setUsersInterface] = useState(false);
     const [productsInterface,setProductsInterface] = useState(false);
@@ -34,8 +36,8 @@ const Header = () => {
     const [editUser,setEditUser] = useState(undefined);
     const [orders,setOrders] = useState(undefined);
       useEffect(()=>{
-          setUser(localStorage.getItem("user"));
-      });
+          setUser(JSON.parse(localStorage.getItem("user")));
+      },[]);
 
     const logOff = () => {
         setLogOff(true);
@@ -62,10 +64,10 @@ const Header = () => {
                 <Button onClick={()=>{setReg(true)}}>Registrace</Button>
               </>
           }
-          <div className="w-40px h-40px mx-auto cursor-pointer pb-8 hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
+          <div className="w-60px mx-auto h-60px bg-orange position-relative rounded-lg hover-move-up "><div className="w-40px h-40px cursor-pointer position-absolute" style={{left:"50%",top:"50%", transform:"translate(-50%,-50%)", zIndex:10}} onClick={()=>{setOpenCart(true)}}><img src={cart}/></div></div>
           {user &&
               <UserId>
-                  <p>Uživatel: {JSON.parse(user).username}</p>
+                  <p>Uživatel: {user.username}</p>
                   {localStorage.getItem("admin") === "true" &&
                   <div>
                       <p className="text-black">Vítejte v adminovském rozhraní</p>
@@ -73,10 +75,10 @@ const Header = () => {
                       <Button onClick={setProductsInterface}>Správa produktů</Button>
                       <Button onClick={()=>{setOrdersInterface(true)}}>Správa objednávek</Button>
                   </div>}
-                  {!JSON.parse(user).admin && (
-                      <Button onClick={()=>{setEditUser(JSON.parse(user))}}>Upravit informace</Button>
+                  {!user.admin && (
+                      <Button onClick={()=>{setEditUser(user)}}>Upravit informace</Button>
                   )}
-                  <Button onClick={()=>{getOrders(JSON.parse(user)._id)}}>Mé objednávky</Button>
+                  <Button onClick={()=>{getOrders(user._id)}}>Mé objednávky</Button>
                   <Button onClick={logOff}>Odhlásit se</Button>
                   {logOffState && <p className="text-black">Odhlašování...</p>}
               </UserId>

@@ -56,4 +56,11 @@ export const Button = styled.button`
   color:${Theme.palette.text};
   border:0;
   border-radius: 2rem;
+  transition-duration: 0.6s;
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.6s;
+    cursor: pointer;
+  }
+  
 `;
