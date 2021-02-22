@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import LogForm from "../logform";
 import RegForm from "../regform";
-import Modal from "../modal";
-import ManageUsers from "../manageusers";
+import {Button} from "../styled";
+import axios from "axios";
 import {AnimatePresence} from "framer-motion";
-import {isEmpty} from "gatsby/dist/schema/infer/inference-metadata";
+import Modal from "../modal";
+import {prepareItems} from "./index";
 
 const countOrderPrice = (data) => {
 
@@ -28,13 +29,26 @@ const countCartItems = (data) => {
     return totalItems;
 }
 
+const sendOrder = (user,data,price,setOrderComplete) => {
+    console.log(user._id);
+    console.log(data);
+    console.log(price);
+    axios.post("http://localhost:5000/order",{userId:user._id,items:data,price:price,completed:false}).then((req,res)=>{
+        setOrderComplete(true);
+        localStorage.removeItem("cart");
+    }).catch((error)=>{
+        console.log(error);
+    })
+}
+
 const OrderSummary = ({data}) => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(true);
+    const [orderComplete,setOrderComplete] = useState(false);
 
     const user = JSON.parse(localStorage.getItem("user"));
 
-    if(data.length > 0){
+    if(data != null){
     return localStorage.getItem("user") ? (
         <div>
             <h1 className="text-white text-center mb-8">Shrnutí objednávky</h1>
@@ -57,6 +71,17 @@ const OrderSummary = ({data}) => {
                     </div>
                 </div>
             ))}
+            <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{sendOrder(user,data,countOrderPrice(data),setOrderComplete)}}>Odeslat objednávku</Button>
+            <AnimatePresence>
+                {orderComplete &&
+                <Modal toggle={setOrderComplete}>
+                    <div>
+                        <h1>Objednávka odeslána</h1>
+                        <p>SDSDSDSD</p>
+                    </div>
+                </Modal>
+                }
+            </AnimatePresence>
         </div>
     ) : (
         <div>

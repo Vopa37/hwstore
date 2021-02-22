@@ -9,18 +9,23 @@ export const prepareItems = (array) => {
     var returnedArray = [];
     var counter = {};
 
-    array.forEach(function(obj) {
-        var key = JSON.stringify(obj)
-        counter[key] = (counter[key] || 0) + 1
-    })
+    if(array != null){
+        array.forEach(function(obj) {
+            var key = JSON.stringify(obj)
+            counter[key] = (counter[key] || 0) + 1
+        })
 
-    Object.entries(counter).forEach((item)=>{
-        var obj = {
-            data:JSON.parse(item[0]),
-            count:item[1],
-        }
-        returnedArray.push(obj);
-    })
+        Object.entries(counter).forEach((item)=>{
+            var obj = {
+                data:JSON.parse(item[0]),
+                count:item[1],
+            }
+            returnedArray.push(obj);
+        })
+    }
+    else{
+        return null;
+    }
 
     return returnedArray;
 }
@@ -52,7 +57,11 @@ const ShoppingCart = () => {
                     </div>
                 </div>
             ))}
+            {cart ?
             <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{setOrderSum(true)}}>K objednávce</Button>
+                :
+                <h5 className="text-white text-center">Košík je prázdný. Musíte ho naplnit</h5>
+            }
 
             <AnimatePresence>
                 {orderSum &&

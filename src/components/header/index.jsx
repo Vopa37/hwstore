@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {
     Root,
   Title,
@@ -18,23 +18,36 @@ import ManageProducts from "../manageproducts";
 import ShoppingCart from "../shoppingcart";
 import {AnimatePresence} from "framer-motion";
 import EditUser from "../manageusers/edituser";
+import axios from "axios";
+import OrdersList from "../orders/ordersList";
+import AdminList from "../orders/adminList";
+import {UserContext} from "../../pages";
 
 const Header = () => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(false);
-    const [user,setUser] = useState(undefined);
+    const user = useContext(UserContext).user;
+    const setUser = useContext(UserContext).setUser;
     const [logOffState,setLogOff] = useState(false);
     const [usersInterface,setUsersInterface] = useState(false);
     const [productsInterface,setProductsInterface] = useState(false);
+    const [ordersInterface,setOrdersInterface] = useState(false);
     const [cartOpen,setOpenCart] = useState(false);
     const [editUser,setEditUser] = useState(undefined);
-  useEffect(()=>{
-      setUser(localStorage.getItem("user"));
-  });
+    const [orders,setOrders] = useState(undefined);
+      useEffect(()=>{
+          setUser(JSON.parse(localStorage.getItem("user")));
+      },[]);
 
     const logOff = () => {
         setLogOff(true);
         setTimeout(()=>{ localStorage.clear();setUser(undefined); setLogOff(false)},2000);
+    }
+
+    const getOrders = (userId) => {
+        axios.get("http://localhost:5000/order",{params:{userId:userId}}).then((res)=>{
+            setOrders(res.data);
+        })
     }
 
   return (
@@ -51,19 +64,21 @@ const Header = () => {
                 <Button onClick={()=>{setReg(true)}}>Registrace</Button>
               </>
           }
-          <div className="w-40px h-40px mx-auto cursor-pointer pb-8 hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
+          <div className="w-60px mx-auto h-60px bg-orange position-relative rounded-lg hover-move-up "><div className="w-40px h-40px cursor-pointer position-absolute" style={{left:"50%",top:"50%", transform:"translate(-50%,-50%)", zIndex:10}} onClick={()=>{setOpenCart(true)}}><img src={cart}/></div></div>
           {user &&
               <UserId>
-                  <p>Uživatel: {JSON.parse(user).username}</p>
+                  <p>Uživatel: {user.username}</p>
                   {localStorage.getItem("admin") === "true" &&
                   <div>
                       <p className="text-black">Vítejte v adminovském rozhraní</p>
                       <Button onClick={setUsersInterface}>Správa uživatelů</Button>
                       <Button onClick={setProductsInterface}>Správa produktů</Button>
+                      <Button onClick={()=>{setOrdersInterface(true)}}>Správa objednávek</Button>
                   </div>}
-                  {!JSON.parse(user).admin && (
-                      <Button onClick={()=>{setEditUser(JSON.parse(user))}}>Upravit informace</Button>
+                  {!user.admin && (
+                      <Button onClick={()=>{setEditUser(user)}}>Upravit informace</Button>
                   )}
+                  <Button onClick={()=>{getOrders(user._id)}}>Mé objednávky</Button>
                   <Button onClick={logOff}>Odhlásit se</Button>
                   {logOffState && <p className="text-black">Odhlašování...</p>}
               </UserId>
@@ -108,6 +123,20 @@ const Header = () => {
                 {editUser &&
                 <Modal toggle={setEditUser}>
                     <EditUser admin={false} user={editUser} toggle={setEditUser}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {orders &&
+                <Modal toggle={setOrders}>
+                    <OrdersList data={orders}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            <AnimatePresence>
+                {ordersInterface &&
+                <Modal toggle={setOrdersInterface}>
+                    <AdminList/>
                 </Modal>
                 }
             </AnimatePresence>

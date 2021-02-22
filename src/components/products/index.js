@@ -7,14 +7,16 @@ const Products = () => {
   return (
       <div className="container mt-5">
           <div className="row m-auto justify-content-around">
-              {products && products.map((product) => (
-                  <Medailon
-                      image={product.image}
-                      price={product.price}
-                      name={product.name}
-                      description={product.description}
-                      id={product._id}
-                  />
+              {products && products.map((product,index) => (
+                  <div key={index} className="col-12 col-md-5 ">
+                      <Medailon
+                          image={product.image}
+                          price={product.price}
+                          name={product.name}
+                          description={product.description}
+                          id={product._id}
+                      />
+                  </div>
               ))}
           </div>
       </div>

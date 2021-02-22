@@ -16,17 +16,22 @@ const IndexPage = () => {
     const [cart,setCart] = useState([]);
     const [products, setProducts] = useState(undefined);
     const [users, setUsers] = useState(undefined);
+    const [user, setUser] = useState(undefined);
 
     useEffect(()=>{
         axios.get("http://localhost:5000/product").then((res)=>{
             setProducts(res.data);
+        });
+
+        axios.get("http://localhost:5000/user").then((res)=>{
+            setUsers(res.data);
         });
     },[]);
 
     return(
         <ProductsContext.Provider value={{products:products,setProducts:setProducts}}>
             <CartContext.Provider value={{cart:cart,setCart:setCart}}>
-                <UserContext.Provider value={{users:users,setUsers:setUsers}}>
+                <UserContext.Provider value={{users:users,setUsers:setUsers,user:user,setUser:setUser}}>
                 <PageRoot>
                     <MenuTarget id="Home"/>
                         <Header/>

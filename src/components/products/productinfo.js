@@ -19,7 +19,7 @@ const ProductInfo = ({price,description,name,id,image}) => {
             <div className="text-white w-50 h-80 m-auto fw-600">
                 <img className="my-8 rounded-lg" src={image}/>
                 <p className="text-center font-weight-100 "><span className="font-weight-900">Název:</span> {name}</p>
-                <p className="text-center font-weight-100 "><span className="font-weight-900">Cena:</span> {price}</p>
+                <p className="text-center font-weight-100 "><span className="font-weight-900">Cena:</span> {price} Kč</p>
                 <p className="text-center font-weight-100 "><span className="font-weight-900">Popis:</span> {description}</p>
                 <Button className="position-relative mx-0" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{
                     !dissabled && addToCart(id,name,price,image);
