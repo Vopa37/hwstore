@@ -19,12 +19,11 @@ router.route("/").post((req,res)=>{
     const userId = req.body.userId;
     const items = req.body.items;
     const price = req.body.price;
-    const completed = req.body.completed;
 
-    const newOrder = new Order({userId,items,price,completed});
+    const newOrder = new Order({userId,items,price});
 
     newOrder.save().then(
-        ()=>{res.json("Order made")}
+        ()=>{res.send({text:"Objednávka odeslána",error:false})}
     ).catch(err => res.status(400).json("Error: " + err));
 })
 
@@ -39,6 +38,13 @@ router.route("/complete").put((req,res)=>{
         res.send("Objednavka dokončena");
     }).catch((error)=>{
         res.send(error);
+    })
+})
+
+router.route("/").delete((req,res)=>{
+    const id = req.query.userId;
+    Order.deleteMany({userId:id}).then(()=>{
+        res.send(`Objednávky od uživatele ${id} byly smazány`);
     })
 })
 

@@ -35,6 +35,7 @@ const Header = () => {
     const [cartOpen,setOpenCart] = useState(false);
     const [editUser,setEditUser] = useState(undefined);
     const [orders,setOrders] = useState(undefined);
+
       useEffect(()=>{
           setUser(JSON.parse(localStorage.getItem("user")));
       },[]);
@@ -50,6 +51,8 @@ const Header = () => {
         })
     }
 
+    console.log(user);
+
   return (
 
     <Root>
@@ -64,7 +67,7 @@ const Header = () => {
                 <Button onClick={()=>{setReg(true)}}>Registrace</Button>
               </>
           }
-          <div className="w-60px mx-auto h-60px bg-orange position-relative rounded-lg hover-move-up "><div className="w-40px h-40px cursor-pointer position-absolute" style={{left:"50%",top:"50%", transform:"translate(-50%,-50%)", zIndex:10}} onClick={()=>{setOpenCart(true)}}><img src={cart}/></div></div>
+          <div className="w-40px h-40px cursor-pointer m-auto hover-move-up" onClick={()=>{setOpenCart(true)}}><img src={cart}/></div>
           {user &&
               <UserId>
                   <p>Uživatel: {user.username}</p>

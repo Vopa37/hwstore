@@ -1,6 +1,16 @@
 import React, {useContext,useState} from "react";
 import {Button} from "../styled";
 import {CartContext} from "../../pages";
+import Modal from "../modal";
+import {AnimatePresence} from "framer-motion";
+import {Status} from "../regform/styled";
+
+const ProductAdded = ({message,setMessage,setDissabled}) => (
+    <div className="py-8 mx-12">
+        <Status error={false}>{message}</Status>
+        <p className="d-none">{setTimeout(()=>{setMessage(undefined);setDissabled(false)},2000)}</p>
+    </div>
+)
 
 const ProductInfo = ({price,description,name,id,image}) => {
     const setCart = useContext(CartContext).setCart;
@@ -18,9 +28,9 @@ const ProductInfo = ({price,description,name,id,image}) => {
         <>
             <div className="text-white w-50 h-80 m-auto fw-600">
                 <img className="my-8 rounded-lg" src={image}/>
-                <p className="text-center font-weight-100 "><span className="font-weight-900">Název:</span> {name}</p>
-                <p className="text-center font-weight-100 "><span className="font-weight-900">Cena:</span> {price} Kč</p>
-                <p className="text-center font-weight-100 "><span className="font-weight-900">Popis:</span> {description}</p>
+                <p className="text-center product-name">{name}</p>
+                <p className="text-center product-price ">Cena: <span className="font-size-20">{price}</span> Kč</p>
+                <p className="text-center">{description}</p>
                 <Button className="position-relative mx-0" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{
                     !dissabled && addToCart(id,name,price,image);
                     !dissabled && setMessage(`${name} přídán do košíku`);
@@ -29,12 +39,14 @@ const ProductInfo = ({price,description,name,id,image}) => {
                     Do košíku
                 </Button>
             </div>
-            {message && (
-                <div>
-                    <p className="text-white text-center">{message}</p>
-                    <p className="d-none">{setTimeout(()=>{setMessage(undefined);setDissabled(false)},3000)}</p>
-                </div>
-            )}
+
+            <AnimatePresence>
+                {message &&
+                <Modal>
+                   <ProductAdded message={message} setDissabled={setDissabled} setMessage={setMessage}/>
+                </Modal>
+                }
+            </AnimatePresence>
         </>
     );
 }

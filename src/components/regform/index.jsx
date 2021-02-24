@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Formik, Field } from "formik";
 import { Root, Form, Input, Error, Status} from "./styled";
 import {Button} from "../styled";
 import { UserSchema } from "./regexp";
 import emailjs from "emailjs-com";
+import {UserContext} from "../../pages";
+import Modal from "../modal";
+import {AnimatePresence} from "framer-motion";
 const axios = require("axios");
+
+const UserAdded = ({message,setMessage}) => (
+    <div className="py-8 mx-12">
+      <Status error={message.error}>{message.text}</Status>
+      <p className="d-none">{setTimeout(()=>{setMessage(undefined)},2000)}</p>
+    </div>
+)
 
 const RegForm = ({toggle}) => {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState(undefined);
+  const setUser = useContext(UserContext).setUser;
 
   const initialValues = () => ({
     "bot-field": "",
@@ -54,7 +65,8 @@ const RegForm = ({toggle}) => {
                 };
 
                 emailjs.send(service_id, template_id, data, user_id);
-                localStorage.setItem("user",res.data.username);
+                localStorage.setItem("user",JSON.stringify(res.data));
+                setUser(res.data);
                 res.data.admin ? localStorage.setItem("admin","true") : null ;
                 setMessage({text:"Uživatel vytvořen",error:false});
                 setTimeout(()=>{toggle(false);resetForm()},2000);
@@ -148,9 +160,13 @@ const RegForm = ({toggle}) => {
               </Error>
             </div>
 
-            {message &&
-            <Status error={message.error}>{message.text}</Status>
-            }
+            <AnimatePresence>
+              {message &&
+              <Modal>
+                <UserAdded message={message} setMessage={setMessage}/>
+              </Modal>
+              }
+            </AnimatePresence>
 
             <Button
               type="submit"

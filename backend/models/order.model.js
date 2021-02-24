@@ -17,7 +17,7 @@ const orderSchema = new Schema({
     userId: {type:String,required:true},
     items: {type:[items], default: undefined, required:true},
     price: {type:Number,required:true},
-    completed:{type:Boolean,required:true,defaultValue:false},
+    completed:{type:Boolean,defaultValue:false},
 },{
     timestamps:true,
 })
