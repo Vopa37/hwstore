@@ -19,8 +19,9 @@ router.route("/").post((req,res)=>{
     const userId = req.body.userId;
     const items = req.body.items;
     const price = req.body.price;
+    const completed = req.body.completed;
 
-    const newOrder = new Order({userId,items,price});
+    const newOrder = new Order({userId,items,price,completed});
 
     newOrder.save().then(
         ()=>{res.send({text:"Objednávka odeslána",error:false})}
@@ -35,10 +36,8 @@ router.route("/complete").put((req,res)=>{
     }).then((model)=>{
         return model.save();
     }).then(()=>{
-        res.send("Objednavka dokončena");
-    }).catch((error)=>{
-        res.send(error);
-    })
+        res.send("Objednavka dokoncena");
+    });
 })
 
 router.route("/").delete((req,res)=>{

@@ -51,8 +51,6 @@ const Header = () => {
         })
     }
 
-    console.log(user);
-
   return (
 
     <Root>
@@ -132,7 +130,7 @@ const Header = () => {
             <AnimatePresence>
                 {orders &&
                 <Modal toggle={setOrders}>
-                    <OrdersList data={orders}/>
+                    <OrdersList orders={orders}/>
                 </Modal>
                 }
             </AnimatePresence>

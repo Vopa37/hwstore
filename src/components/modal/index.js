@@ -30,7 +30,7 @@ const Modal = ({ toggle, children}) => {
 
     return (
         <Portal>
-            <ModalContainer innerRef={modalRef} style={{}}>
+            <ModalContainer ref={modalRef} style={{}}>
                 <InsideWrap>
                     <Overlay
                         initial={{ opacity: 0 }}

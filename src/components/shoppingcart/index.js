@@ -30,9 +30,18 @@ export const prepareItems = (array) => {
     return returnedArray;
 }
 
+
+
+
 const ShoppingCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart"));
     const setCart = useContext(CartContext).setCart;
+
+    const deleteItem = (cart,id) => {
+        const resolvedCart = cart.filter(element => element.id != id);
+        localStorage.setItem("cart",JSON.stringify(resolvedCart));
+        setCart(resolvedCart);
+    }
 
     const [message,setMessage] = useState(undefined);
     const [orderSum,setOrderSum] = useState(false);
@@ -54,6 +63,7 @@ const ShoppingCart = () => {
 
                     <div className="w-50 d-flex flex-column justify-content-center">
                         <p className="text-center m-0 p-0"> <span className="fw-700">Počet v košíku:</span> {item.count}</p>
+                        <Button className="mx-auto" onClick={()=>{deleteItem(cart,item.data.id)}}>Odstranit</Button>
                     </div>
                 </div>
             ))}
