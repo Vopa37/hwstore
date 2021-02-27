@@ -23,7 +23,7 @@ router.route("/").post((req,res)=>{
 })
 
 router.route("/").delete((req,res)=>{
-    Product.findOneAndDelete({_id:req.query.id}).then((user)=>{
+    Product.findOneAndDelete({_id:req.query.id}).then(()=>{
         res.send({text:`Produkt s id ${req.query.id} odstraněn`,error:false});
     }).catch(() => res.status(400).send({text:"Nastala chyba - zkuste to znovu",error:true}));
 })

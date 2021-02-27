@@ -1,15 +1,9 @@
 const theme = {};
 
 theme.palette = {
-  primary: "#2F2FA2",
-  secondary:"#F64C72",
-  purple:"#553D67",
-  secondaryBlue: "#4DA8DA",
+  primary: "#0a043c",
+  secondary:"#03506f",
   text:"#EEFBFB",
-
-  transparent: "transparent",
-
-  yellow: "#d69c00",
 };
 
 theme.fonts = {

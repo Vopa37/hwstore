@@ -22,7 +22,7 @@ router.route("/").post((req,res)=>{
     const newUser = new User({firstname,lastname,username,email,password,admin});
 
     newUser.save().then(
-        ()=>{res.send({firstname:firstname,lastname:lastname,username:username,email:email,password:password,admin:admin})}
+        ()=>{res.send(newUser)}
     ).catch(err => res.status(400).json("Error: " + err));
 })
 

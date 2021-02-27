@@ -7,10 +7,17 @@ import ItemForm from "../itemform";
 import {ProductsContext} from "../../pages";
 import EditProduct from "./editproduct";
 import Confirm from "../confirm";
+import {Status} from "../regform/styled";
+
+const ProductDeleted = ({message,setMessage}) => (
+    <div className="py-8 mx-12">
+        <Status error={message.error}>{message.text}</Status>
+        <p className="d-none">{setTimeout(()=>{setMessage(undefined);setTimeout(()=>{document.location.href="/";},500)},2000)}</p>
+    </div>
+)
 
 const ManageProducts = () => {
     const products = useContext(ProductsContext).products;
-    const setProducts = useContext(ProductsContext).setProducts;
     const [message,setMessage] = useState(undefined);
     const [productForm,setProductForm] = useState(false);
     const [editProduct,setEditProduct] = useState(undefined);
@@ -21,12 +28,6 @@ const ManageProducts = () => {
         axios.delete('http://localhost:5000/product',{params:{id:id}}).then((res)=>{
             setMessage(res.data);
         });
-
-        axios.get('http://localhost:5000/product').then((res)=>{
-            setProducts(res.data);
-        });
-
-        setTimeout(()=>{ setMessage(undefined)},2000);
     }
 
 
@@ -34,7 +35,15 @@ const ManageProducts = () => {
         <div className="w-80 m-auto">
             <h1 className="text-center text-white">Správa produktů</h1>
             <Button className="position-relative mx-0 my-6" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{setProductForm(true)}}>Přidat produkt</Button>
-            {message && <p>{message.text}</p>}
+            {message &&
+            <AnimatePresence>
+                {message &&
+                <Modal>
+                    <ProductDeleted message={message} setMessage={setMessage}/>
+                </Modal>
+                }
+            </AnimatePresence>
+            }
                 <AnimatePresence>
                     {productForm &&
                     <Modal toggle={setProductForm}>

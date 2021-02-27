@@ -27250,3 +27250,18 @@ a.text-lightest:focus {
 .bg-orange{
   background-color: #F64C72;
 }
+
+@keyframes titleAnimation {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2)}
+  100% {transform: scale(1)}
+}
+
+.product-name{
+  font-size:2rem;
+  text-align:center;
+}
+
+.product-price{
+  font-weight:900;
+}

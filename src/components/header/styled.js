@@ -19,7 +19,10 @@ export const Title = styled.h1`
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  animation: titleAnimation 5s linear;
+  animation-iteration-count: infinite;
 `;
+
 
 export const StyledImg = styled.div`
   float: left;

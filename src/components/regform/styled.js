@@ -52,8 +52,11 @@ export const Error = styled.p`
 `;
 
 export const Status = styled.div`
-    color: ${({error}) => error ? "red" : "green"};
+    color: white;
     width: 100%;
     margin: 1rem auto;
+    font-size:2rem;
+    text-align:center;
+    font-weight:900;
 `;
 

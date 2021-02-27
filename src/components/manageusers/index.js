@@ -20,8 +20,8 @@ const ManageUsers = ({toggle}) => {
     },[users])
 
     const deleteUser = (id) => {
+        axios.delete("http://localhost:5000/order",{params:{userId:id}});
         axios.get('http://localhost:5000/user/remove',{params:{id:id}}).then((res)=>{
-            console.log(res.data);
             setMessage(res.data);
         });
     }
