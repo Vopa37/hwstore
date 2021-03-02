@@ -18,7 +18,7 @@ router.route("/").post((req,res)=>{
     const newProduct = new Product({name,description,price,image});
 
     newProduct.save().then(
-        ()=>{res.json("Product added")}
+        ()=>{res.json({text:"Produkt přidán",error:false})}
     ).catch(err => res.status(400).json("Error: " + err));
 })
 
@@ -40,7 +40,7 @@ router.route("/").put((req,res)=>{
     }).then((model)=>{
         return model.save();
     }).then(()=>{
-        res.send("Produkt upraven");
+        res.send({text:"Produkt byl upraven",error:false});
     }).catch((error)=>{
         res.send(error);
     })
