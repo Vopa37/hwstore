@@ -4,7 +4,7 @@ LABEL version="1.0"
 LABEL description="This is the base docker image for the Hardwarestore frontend react app."
 LABEL maintainer = ["vojtechpavelka37@gmail.com"]
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY ["package.json", "package-lock.json", "./"]
 
