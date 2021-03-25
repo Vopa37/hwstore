@@ -27,9 +27,12 @@ app.use("/product",productRouter);
 app.use("/user",userRouter);
 app.use("/order",orderRouter);
 
-app.use((req,res)=>{
-    res.status(400).json({state:"OK"});
-})
+app.use(express.static(__dirname+"/frontend/public"))
+
+app.get(/.*/,(req,res)=>{
+    res.sendFile(__dirname+"/frontend/public/index.html");
+});
+
 
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);
