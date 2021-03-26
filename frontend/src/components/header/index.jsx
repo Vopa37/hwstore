@@ -26,7 +26,7 @@ import {UserContext} from "../homepage";
 const Header = () => {
     const [reg,setReg] = useState(false);
     const [log,setLog] = useState(false);
-    const user = useContext(UserContext).user;
+    const user = useContext(UserContext) ? useContext(UserContext).user : {};
     const setUser = useContext(UserContext).setUser;
     const [logOffState,setLogOff] = useState(false);
     const [usersInterface,setUsersInterface] = useState(false);
