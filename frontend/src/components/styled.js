@@ -67,6 +67,9 @@ export const Button = styled.button`
 export const Status = styled.div`
     color: white;
     width: 100%;
+    @media(max-width: 992px){
+      width: 50%;
+    }
     margin: 1rem auto;
     font-size:2rem;
     text-align:center;

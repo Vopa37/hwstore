@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Půjčovna strojů`,
-    description: `Prorocketeers půjčovna vybavení pro firmy i jednotlivce.`,
-    author: `Prorocketeers`,
+    title: `Prodejna HW`,
+    description: `HWSTORE`,
+    author: `Vojtech Pavelka`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

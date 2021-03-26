@@ -5,12 +5,6 @@ import Modal from "../modal";
 import {AnimatePresence} from "framer-motion";
 import {Status} from "../styled";
 
-const ProductAdded = ({message,setMessage,setDissabled}) => (
-    <div className="py-8 mx-12">
-        <Status error={false}>{message}</Status>
-        <p className="d-none">{setTimeout(()=>{setMessage(undefined);setDissabled(false)},2000)}</p>
-    </div>
-)
 
 const ProductInfo = ({price,description,name,id,image}) => {
     const setCart = useContext(CartContext).setCart;
@@ -22,7 +16,7 @@ const ProductInfo = ({price,description,name,id,image}) => {
         localStorage.setItem("cart",JSON.stringify(newCart));
     }
 
-    const [message,setMessage] = useState(undefined);
+    const [message,setMessage] = useState({text:"PEPEPEPEPEPEPEPPEPEPEPEPEPEPPEPEPEPE"});
     const [dissabled,setDissabled] = useState(false);
     return(
         <>
