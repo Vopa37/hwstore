@@ -8,9 +8,9 @@ const OrderSmall = ({order,user,completeOrder}) => {
     return(
         <>
             <SmallOrderWrapper onClick={()=>{setOrderDetail({order,user})}}>
-                <p>id : <span className="font-weight-900">{order._id}</span></p>
-                {user && <p>uživatel : <span className="font-weight-900">{user.username}</span></p>}
-                <p>stav : <span className="font-weight-900" style={{color:order.completed?"green":"red"}}>{order.completed ? "Dokončená" : "Probíhá"}</span></p>
+                <span>id : <span className="font-weight-900">{order._id}</span></span>
+                {user && <span>uživatel : <span className="font-weight-900">{user.username}</span></span>}
+                <span>stav : <span className="font-weight-900" style={{color:order.completed?"green":"red"}}>{order.completed ? "Dokončená" : "Probíhá"}</span></span>
             </SmallOrderWrapper>
             <AnimatePresence>
                 {orderDetail &&

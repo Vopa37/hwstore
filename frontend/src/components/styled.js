@@ -49,11 +49,6 @@ export const Button = styled.button`
   cursor:pointer;
   max-width: 10rem;
   min-width: 6rem;
-  @media(max-width: 992px){
-    max-width: none;
-    margin: 1rem auto;
-    width: 80%;
-  }
   margin: 0 2rem 2rem 2rem;
   width: 50%;
   height:2rem;
@@ -79,9 +74,4 @@ export const Status = styled.div`
     font-size:2rem;
     text-align:center;
     font-weight:900;
-`;
-
-export const AlertWrapper = styled.div`
-    width: 100%;
-    margin: 2rem 0;
 `;

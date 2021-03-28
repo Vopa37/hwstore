@@ -60,10 +60,10 @@ const RegForm = ({toggle}) => {
                 };
 
                 emailjs.send(service_id, template_id, data, user_id);
-                localStorage.setItem("user",JSON.stringify(res.data.user));
-                setUser(res.data.user);
+                localStorage.setItem("user",JSON.stringify(res.data));
+                setUser(res.data);
                 res.data.admin && localStorage.setItem("admin",res.data.admin);
-                setMessage(res.data.message);
+                setMessage({text:"Uživatel vytvořen",error:false});
                 setTimeout(()=>{toggle(false);resetForm()},2000);
               })
             }else{

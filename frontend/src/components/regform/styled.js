@@ -16,9 +16,6 @@ export const Form = styled(FormikForm)`
   width: 40%;
   align-items: center;
   margin: auto;
-  @media(max-width: 992px){
-    width: 80%;
-  }
 `;
 
 export const Input = styled(Field)`
