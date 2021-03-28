@@ -4,7 +4,7 @@
   "description": "Backend dependency list",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "vojtechpavelka37@gmail.com",
   "license": "ISC",

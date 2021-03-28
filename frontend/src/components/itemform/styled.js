@@ -13,15 +13,18 @@ export const Root = styled.div`
 `;
 
 export const Form = styled(FormikForm)`
-  width: 80%;
+  width: 40%;
   align-items: center;
   margin: auto;
+  @media(max-width: 992px){
+    width: 80%;
+  }
 `;
 
 export const Input = styled(Field)`
   margin:auto;
   padding: 0;
-  width: 40%;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   padding-left: 20px;

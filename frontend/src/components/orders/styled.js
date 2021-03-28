@@ -9,4 +9,8 @@ export const SmallOrderWrapper = styled.div`
     cursor:pointer;
     display:flex;
     justify-content:space-around;
+    @media(max-width: 992px){
+      display: block;
+      text-align: center;
+    }
 `;

@@ -23,14 +23,14 @@ const Modal = ({ toggle, children}) => {
         disableBodyScroll(modalRef);
         if (!isPresent) {
             setAnimationComplete(false);
-            setTimeout(safeToRemove, 500);
+            setTimeout(safeToRemove, 1000);
             clearAllBodyScrollLocks();
         }
     }, [isPresent, modalRef, safeToRemove]);
 
     return (
         <Portal>
-            <ModalContainer ref={modalRef} style={{}}>
+            <ModalContainer ref={modalRef}>
                 <InsideWrap>
                     <Overlay
                         initial={{ opacity: 0 }}
