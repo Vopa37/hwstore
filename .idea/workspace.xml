@@ -2,146 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aee04c3-7855-4e39-9b25-fd26dc578353" name="Default Changelist" comment="Heroku implementation">
-      <change beforePath="$PROJECT_DIR$/.cache/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/api-runner-browser-plugins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/api-runner-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/api-runner-ssr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/api-ssr-docs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/async-requires.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/babelState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-1c39d4359553d5289cae0a5e6e3adb72.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-24eaee2e3db896a5df551b0a66eb5ffb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-2e0aefa3cef13ee2eba74858a74899a7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-3cb157f67cff5eb273080bd6e4f1c790.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-453edd87fb755f4b3b04ac42268c524c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-4a54035b1c1e0c21115dcaf836d41fac.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-4a6dd85a32fcdf6b46c581f1505fa01c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-5b665875e2d401c3d7fe75e3d8e86ffa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-66d68e4a1d11715c631848783f628b27.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-68dbacde6f6dafe0051f6b012399b3c5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-6dafcccd28aecc885a9127662726803d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-743ab75bd698c85f638c0fb4368a8773.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-805a972c9ea35ced254960c65957114a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-82b62704ae091911888e578018113e8d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-95a701b023dafa32cd480f7f2a435546.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-9a95eeb526dc1f4c002dfc1007be5b79.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-b761bdf0f3876e47ffefcabf5f515984.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-bc6151949feabced4e0274b1c6c0ef2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-c5575ad22b48d3e5e9fb4b3248b83ea0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-c71a1df6ec550c04bb18bc100afa1823.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-c9718dad3561bebe6e36678cfd3dcb71.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-cd19f30de03448f4f5296d6be4ba0f32.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-cdd13cde9828d4c0308e0ec6b4c4e587.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-dee8244293a2a2651a9bab08589fb9bb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-e3bd3cbec0932e256364ddb9f3170c22.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-e608a10963767dea8778951330341b46.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-e94d40f8735ffac68f884607668e4bd3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-eb21b80753d2492b979966351cd8a46d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/caches/gatsby-transformer-sharp/diskstore-ed0a5e2694b3b0bce6a365a329564adc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/api-runner-browser-plugins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/api-runner-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/api-runner-ssr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/api-ssr-docs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/create-react-context.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/debug-log.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/default-html.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/dev-loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/develop-static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/dummy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/emitter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/ensure-resources.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/error-overlay-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/build-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/code-frame.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/error-boundary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/overlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/portal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/runtime-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/components/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/fast-refresh-overlay/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/find-path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/gatsby-browser-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/loading-indicator/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/loading-indicator/indicator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/loading-indicator/portal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/loading-indicator/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/normalize-page-path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/page-renderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/polyfill-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/prefetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/production-app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/public-page-renderer-dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/public-page-renderer-prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/public-page-renderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/query-result-store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/react-lifecycles-compat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/register-service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/root.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/route-announcer-props.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/socketIo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/ssr-develop-static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/commonjs/strip-prefix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/create-react-context.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/debug-log.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/default-html.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/dev-404-page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/dev-loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/develop-static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/dummy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/emitter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/ensure-resources.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/error-overlay-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/build-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/code-frame.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/error-boundary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/overlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/portal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/runtime-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/components/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/fast-refresh-overlay/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/find-path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/gatsby-browser-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/json/_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/json/_dev-404-page_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/json/_productform_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/loading-indicator/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/loading-indicator/indicator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/loading-indicator/portal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/loading-indicator/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/match-paths.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/normalize-page-path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/page-renderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/polyfill-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/prefetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/production-app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/public-page-renderer-dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/public-page-renderer-prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/public-page-renderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/query-result-store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/react-lifecycles-compat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/redirects.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/redux/redux.node.state_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/redux/redux.rest.state" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/register-service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/root.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/route-announcer-props.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/socketIo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/ssr-develop-static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/static-entry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/strip-prefix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/sync-requires.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/test-require-error.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/async-requires.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/async-requires.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/redux/redux.node.state_0" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/redux/redux.node.state_0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/chunk-map.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/chunk-map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/page-data/app-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/page-data/app-data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/webpack.stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/webpack.stats.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/products/productinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/products/productinfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,6 +98,7 @@
       <workItem from="1616695287721" duration="900000" />
       <workItem from="1616777856286" duration="1651000" />
       <workItem from="1616779644514" duration="383000" />
+      <workItem from="1616842273753" duration="1363000" />
     </task>
     <task id="LOCAL-00001" summary="Reinitialized repo using Gatsby">
       <created>1608661288419</created>

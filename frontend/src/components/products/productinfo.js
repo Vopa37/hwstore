@@ -3,7 +3,7 @@ import {Button} from "../styled";
 import {CartContext} from "../homepage";
 import Modal from "../modal";
 import {AnimatePresence} from "framer-motion";
-import {Status} from "../styled";
+import Alert from "../alert";
 
 
 const ProductInfo = ({price,description,name,id,image}) => {
@@ -16,7 +16,7 @@ const ProductInfo = ({price,description,name,id,image}) => {
         localStorage.setItem("cart",JSON.stringify(newCart));
     }
 
-    const [message,setMessage] = useState({text:"PEPEPEPEPEPEPEPPEPEPEPEPEPEPPEPEPEPE"});
+    const [message,setMessage] = useState(undefined);
     const [dissabled,setDissabled] = useState(false);
     return(
         <>
@@ -27,7 +27,7 @@ const ProductInfo = ({price,description,name,id,image}) => {
                 <p className="text-center">{description}</p>
                 <Button className="position-relative mx-0" style={{left:"50%",transform:"translateX(-50%)"}} onClick={()=>{
                     !dissabled && addToCart(id,name,price,image);
-                    !dissabled && setMessage(`${name} přídán do košíku`);
+                    !dissabled && setMessage({text:`${name} přídán do košíku`,error:false});
                     !dissabled && setDissabled(true);
                 }}>
                     Do košíku
@@ -37,7 +37,7 @@ const ProductInfo = ({price,description,name,id,image}) => {
             <AnimatePresence>
                 {message &&
                 <Modal>
-                   <ProductAdded message={message} setDissabled={setDissabled} setMessage={setMessage}/>
+                   <Alert message={message} setMessage={setMessage}/>
                 </Modal>
                 }
             </AnimatePresence>
