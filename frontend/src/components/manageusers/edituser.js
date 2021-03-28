@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 import axios from "axios";
-import {Error, Form, Input, Root, Checkbox} from "../itemform/styled";
+import {Error, Form, Input, Root, Checkbox} from "../styled";
 import {Field, Formik} from "formik";
 import {UserSchema} from "../regform/regexp";
 import {Button} from "../styled";
@@ -27,6 +27,7 @@ const EditUser = ({admin,user}) => {
 
     return (
         <Root>
+            <h1 className="text-white mb-6">Změna uživatele:</h1>
             <Formik
                 validationSchema={UserSchema}
                 initialValues={initialValues(true)}

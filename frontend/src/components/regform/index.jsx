@@ -1,6 +1,6 @@
 import React, { useState,useContext } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Input, Error} from "./styled";
+import { Root, Form, Input, Error} from "../styled";
 import {Button} from "../styled";
 import { UserSchema } from "./regexp";
 import emailjs from "emailjs-com";

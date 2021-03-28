@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import {Error, Form, Input, Root} from "../itemform/styled";
+import {Error, Form, Input, Root} from "../styled";
 import {Button} from "../styled";
 import {Field, Formik} from "formik";
 import {ProductSchema} from "../itemform/regexp";
@@ -22,6 +22,7 @@ const EditProduct = ({product}) => {
 
     return (
         <Root>
+            <h1 className="text-white mb-6">Změna produktu:</h1>
             <Formik
                 validationSchema={ProductSchema}
                 initialValues={initialValues(true)}

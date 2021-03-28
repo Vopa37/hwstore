@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Field } from "formik";
-import { Root, Form, Input, Error} from "./styled";
+import { Root, Form, Input, Error} from "../styled";
 import {Button} from "../styled";
 import { ProductSchema } from "./regexp";
 import Modal from "../modal";
