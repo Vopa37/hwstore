@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aee04c3-7855-4e39-9b25-fd26dc578353" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/async-requires.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/async-requires.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/redux/redux.node.state_0" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/redux/redux.node.state_0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/manageusers/edituser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/manageusers/edituser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/manageusers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/manageusers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +97,7 @@
       <workItem from="1616779644514" duration="383000" />
       <workItem from="1616842273753" duration="1363000" />
       <workItem from="1617006945953" duration="2931000" />
+      <workItem from="1617046245041" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="Reinitialized repo using Gatsby">
       <created>1608661288419</created>

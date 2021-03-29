@@ -41,26 +41,23 @@ const ManageUsers = () => {
                }
            </AnimatePresence>
             { users && users.map((user,index)=>(
-                <div className="text-black w-100 bg-white my-4 d-flex" key={index}>
-                    <div className="w-50">
+                <div className="text-black w-100 bg-white my-4 d-block" key={index}>
+                    <div className="w-100">
                         <p className="text-center m-0 p-0"> <span className="fw-700">ID:</span> {user._id}</p>
                         <p className="text-center m-0 p-0"> <span className="fw-700">Jméno:</span> {user.firstname}</p>
                         <p className="text-center m-0 p-0"> <span className="fw-700">Příjmení:</span> {user.lastname}</p>
                         <p className="text-center m-0 p-0"> <span className="fw-700">E-mail:</span> {user.email}</p>
                     </div>
 
-                    <div className="w-50 d-flex flex-column justify-content-center">
-                        <Button className="w-50 m-auto" onClick={()=>{setEditUser(user)}}>Upravit</Button>
-                    </div>
-
-                    <div className="w-50 d-flex flex-column justify-content-center">
-                        {!user.admin && <Button className="w-50 m-auto" onClick={()=>{deleteUser(user._id,setUsers)}}>Odstranit</Button> }
+                    <div className="w-100 d-flex flex-column justify-content-center">
+                        <Button className="w-50 mx-auto" onClick={()=>{setEditUser(user)}}>Upravit</Button>
+                        {!user.admin && <Button className="w-50 mx-auto" onClick={()=>{deleteUser(user._id,setUsers)}}>Odstranit</Button> }
                     </div>
 
                     <AnimatePresence>
                         {editUser &&
                         <Modal toggle={setEditUser}>
-                            <EditUser admin={true} user={editUser} toggle={setEditUser}/>
+                            <EditUser admin={user.admin} user={editUser} toggle={setEditUser}/>
                         </Modal>
                         }
                     </AnimatePresence>

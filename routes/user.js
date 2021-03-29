@@ -46,7 +46,7 @@ router.route("/").put((req,res)=>{
     }).then((model)=>{
         return model.save();
     }).then((user)=>{
-        res.send(user);
+        res.send({user:user,message:{text:"Uživatel upraven", error:false}});
     }).catch((error)=>{
         res.send(error);
     })

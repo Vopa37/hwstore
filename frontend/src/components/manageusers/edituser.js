@@ -9,9 +9,8 @@ import Modal from "../modal";
 import Alert from "../alert";
 import {AnimatePresence} from "framer-motion";
 
-const EditUser = ({admin,user}) => {
+const EditUser = ({admin,user,toggle}) => {
     const setUsers = useContext(UserContext).setUsers;
-    const [submitted] = useState(false);
     const [message, setMessage] = useState(undefined);
 
     const initialValues = () => ({
@@ -46,6 +45,7 @@ const EditUser = ({admin,user}) => {
                         axios.get("/user").then((res)=>{
                             setUsers(res.data);
                         })
+                        setTimeout(()=>{toggle()},2000);
                     })
                 }}
                 render={({ handleSubmit, errors, touched, isSubmitting }) => (
@@ -132,7 +132,7 @@ const EditUser = ({admin,user}) => {
                         <Button
                             type="submit"
                         >
-                            {submitted ? "✓" : isSubmitting ? "Odesílání" : "Odeslat"}
+                            Odeslat
                         </Button>
 
                         <AnimatePresence>
