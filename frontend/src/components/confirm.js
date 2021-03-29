@@ -4,7 +4,7 @@ const Confirm = ({title,accept,decline}) => {
     return(
         <div>
             <h2 className="text-white text-center my-8">{title}</h2>
-        <div className="d-flex align-content-center m-auto w-50" >
+        <div className="d-flex align-content-center m-auto" >
             <Button onClick={accept}>Ano</Button>
             <Button onClick={decline}>Ne</Button>
         </div>

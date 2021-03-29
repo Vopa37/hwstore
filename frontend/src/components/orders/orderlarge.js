@@ -4,7 +4,6 @@ import {Button} from "../styled";
 const OrderLarge = ({data,completeOrder,setOrderDetail}) => {
     return(
         <div className="bg-white rounded-lg w-80 mx-auto my-6 p-4">
-            <h4 className="text-center">{data.order._id}</h4>
             {data.user &&
             <>
                 <p className="text-center">Uživatel: {data.user.firstname} {data.user.lastname}</p>

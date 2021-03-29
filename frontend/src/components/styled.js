@@ -12,9 +12,7 @@ export const Root = styled.div`
     #eb5d3e 76.89%,
     #fec82f 99.05%
   );
-  color: ${Theme.palette.secondary};
-  font-family: ${Theme.fonts.primary};
-  font-size: ${Theme.fontBaseSize};
+  color:white;
   min-height: 100vh;
   padding-top: 80px;
   overflow-x: hidden;
@@ -62,6 +60,9 @@ export const Button = styled.button`
     transform: scale(1.1);
     transition-duration: 0.6s;
     cursor: pointer;
+  }
+  @media(max-width: 992px){
+    width: 80%;
   }
 `;
 
@@ -128,3 +129,6 @@ export const Checkbox = styled(Field)`
   outline: none;
 `;
 
+export const AlertWrapper = styled.div`
+  margin:auto;
+`;

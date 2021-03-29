@@ -20,6 +20,7 @@ const ItemForm = () => {
 
   return (
     <Root>
+      <h1 className="text-white">Přidání produktu</h1>
       <Formik
           validationSchema={ProductSchema}
         initialValues={initialValues(true)}

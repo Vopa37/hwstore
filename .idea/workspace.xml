@@ -8,17 +8,17 @@
       <change beforePath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/redux/redux.rest.state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.cache/sync-requires.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/page-data/sq/d/1022643890.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/alert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/confirm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/itemform/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/itemform/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/itemform/styled.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/logform/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/logform/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/logform/styled.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/manageproducts/editproduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/manageproducts/editproduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/manageusers/edituser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/manageusers/edituser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/manageproducts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/manageproducts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/orders/orderlarge.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/orders/orderlarge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/orders/ordersmall.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/orders/ordersmall.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/orders/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/orders/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/regform/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/regform/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/regform/styled.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/textline/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/textline/styled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +104,7 @@
       <workItem from="1616777856286" duration="1651000" />
       <workItem from="1616779644514" duration="383000" />
       <workItem from="1616842273753" duration="1363000" />
+      <workItem from="1617006945953" duration="2587000" />
     </task>
     <task id="LOCAL-00001" summary="Reinitialized repo using Gatsby">
       <created>1608661288419</created>

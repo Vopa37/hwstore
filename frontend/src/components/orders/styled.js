@@ -7,6 +7,6 @@ export const SmallOrderWrapper = styled.div`
     padding:0 0.5rem;
     margin: 2rem auto;
     cursor:pointer;
-    display:flex;
+    text-align: center;
     justify-content:space-around;
 `;
